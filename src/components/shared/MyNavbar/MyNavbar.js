@@ -8,7 +8,6 @@ class MyNavbar extends React.Component {
   logMeOut = (e) => {
     e.preventDefault();
     firebase.auth().signOut();
-    console.error('you just ran the logMeOut function');
   }
 
   render() {

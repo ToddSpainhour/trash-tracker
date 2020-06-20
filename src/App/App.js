@@ -12,11 +12,11 @@ import {
 import Auth from '../components/pages/Auth/Auth';
 import MyNavbar from '../components/shared/MyNavbar/MyNavbar';
 import Welcome from '../components/pages/Welcome/Welcome';
-// import Challenge from '../components/pages/Challenge/Challenge';
-// import LearnMore from '../components/pages/LearnMore/LearnMore';
+import Challenge from '../components/pages/Challenge/Challenge';
+import LearnMore from '../components/pages/LearnMore/LearnMore';
 import MyTrash from '../components/pages/MyTrash/MyTrash';
 import CreateNewTrash from '../components/pages/CreateNewTrash/CreateNewTrash';
-import UpdateTrash from '../components/pages/UpdateTrash/UpdateTrash';
+import EditTrash from '../components/pages/EditTrash/EditTrash';
 import RandomTrashFacts from '../components/pages/RandomTrashFacts/RandomTrashFacts';
 import Footer from '../components/shared/Footer/Footer';
 
@@ -36,9 +36,10 @@ const PublicRoute = ({ component: Component, authenticated, ...rest }) => {
 const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
   const routeChecker = (props) => (authenticated === true
     ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/auth', state: { from: props.location } }} />));
+    : (<Redirect to={{ pathname: '/welcome', state: { from: props.location } }} />));
   return <Route {...rest} render={(props) => routeChecker(props)} />;
 };
+// i changed the pathname: '/auth', to what is seen above. seems to be working
 
 class App extends React.Component {
   state = {
@@ -70,13 +71,13 @@ class App extends React.Component {
                 <div className="row">
                   <Switch>
                     <PrivateRoute path='/trackmytrash' component={MyTrash} authenticated={authenticated} />
-                    <PrivateRoute path='/createnewtrash' component={CreateNewTrash} authenticated={authenticated} />
-                    <PrivateRoute path='/updatetrash/:trashId' component={UpdateTrash} authenticated={authenticated} />
+                    <PrivateRoute path='/newtrash' component={CreateNewTrash} authenticated={authenticated} />
+                    <PrivateRoute path='/edittrash/:trashId' component={EditTrash} authenticated={authenticated} />
                     <PrivateRoute path='/trashfacts' component={RandomTrashFacts} authenticated={authenticated} />
 
                     <PublicRoute path='/welcome' component={Welcome} authenticated={authenticated} />
-                    {/* <PublicRoute path='/7daychallenge' component={Challenge} authenticated={authenticated} />
-                    <PublicRoute path='/learnmore' component={LearnMore} authenticated={authenticated} /> */}
+                    <PublicRoute path='/7daychallenge' component={Challenge} authenticated={authenticated} />
+                    <PublicRoute path='/learnmore' component={LearnMore} authenticated={authenticated} />
                     <PublicRoute path='/auth' component={Auth} authenticated={authenticated} />
 
                     <Redirect from="*" to="/welcome"/>

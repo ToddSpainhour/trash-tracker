@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -7,18 +8,18 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import './MyNavbar.scss';
 
 class MyNavbar extends React.Component {
+  static propTypes = {
+    authenticated: PropTypes.bool.isRequired,
+  }
+
   state = {
     isOpen: false,
   }
@@ -34,23 +35,43 @@ class MyNavbar extends React.Component {
 
   render() {
     const { isOpen } = this.state;
+
+    const buildNavbar = () => {
+      const { authenticated } = this.props;
+      if (authenticated) {
+        return (
+          <Nav className="ml-auto" navbar>
+          <NavItem>
+            <NavLink tag={RRNavLink} to='/trackmytrash'>Track My Trash</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink tag={RRNavLink} to='/learnmore'>Learn More</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink onClick={this.logMeOut}>Logout</NavLink>
+          </NavItem>
+        </Nav>
+        );
+      }
+      return (
+        <Nav className="ml-auto" navbar>
+        <NavItem>
+          <NavLink href="/7daychallenge">Why Trash My Trash?</NavLink>
+        </NavItem>
+        <NavItem>
+        <NavLink tag={RRNavLink} to='/learnmore'>Learn More</NavLink>
+        </NavItem>
+      </Nav>
+      );
+    };
+
     return (
       <div className="MyNavbar">
-        {/* <h5>MyNavbar</h5> */}
-        {/* <button className="btn btn-dark" onClick={this.logMeOut}>Logout</button> */}
         <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">Trash Tracker</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          {buildNavbar()}
         </Collapse>
       </Navbar>
       </div>

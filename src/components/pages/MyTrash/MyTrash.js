@@ -14,7 +14,6 @@ class MyTrash extends React.Component {
 
   getTrash = () => {
     const uid = authData.getUid();
-    console.error('getTrash function inside MyTrash.js just fired!');
     trashData.getTrashByUid(uid)
       .then((trashArray) => this.setState({ trashArray }))
       .catch((err) => console.error('connot get trash...', err));
@@ -26,13 +25,15 @@ class MyTrash extends React.Component {
 
   render() {
     const { trashArray } = this.state;
-    const buildTrashCards = trashArray.map((trash) => (
-      <TrashCard trash={trash}/>
+    const buildTrashCards = trashArray.map((trashItem) => (
+      <TrashCard trashItem={trashItem} key={trashItem.id}/>
     ));
     return (
-      <div className="MyTrash">
+      <div className="MyTrash col-12">
         <h5>MyTrash READ</h5>
-        {buildTrashCards}
+          <div className="row">
+              {buildTrashCards}
+          </div>
       </div>
     );
   }

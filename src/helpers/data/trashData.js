@@ -4,7 +4,6 @@ import firebaseConfig from '../apiKeys.json';
 const baseUrl = firebaseConfig.firebaseKeys.databaseURL;
 
 const getTrashByUid = (uid) => new Promise((resolve, reject) => {
-  console.error('this is inside your getTrashByUid function in trashData');
   axios.get(`${baseUrl}/trash.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       const trashItemsOnFirebase = response.data;

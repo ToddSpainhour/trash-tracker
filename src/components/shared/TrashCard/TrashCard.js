@@ -7,7 +7,6 @@ class TrashCard extends React.Component {
     const { trash } = this.props;
     return (
       <div className="TrashCard">
-        <h6>Individual Trash Card</h6>
         {trash.trashName}
       </div>
     );

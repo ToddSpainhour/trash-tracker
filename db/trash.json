@@ -28,7 +28,7 @@
   },
   "trash4": {
 		"trashName": "Laundry Dedergent Jug",
-		"trashDescription": "",
+		"trashDescription": "Family Sized",
 		"materialId": "Plastic",
 		"isRecyclable": true,
 		"didYouRecycle": true,
@@ -37,7 +37,7 @@
   },
   "trash5": {
 		"trashName": "Junk Mail",
-		"trashDescription": "",
+		"trashDescription": "So many deals...",
 		"materialId": "Paper",
 		"isRecyclable": true,
 		"didYouRecycle": true,
@@ -56,9 +56,9 @@
   "trash7": {
 		"trashName": "Spaghetti Sauce",
 		"trashDescription": "26 Fluid Ounces",
-		"materialId": "Paper",
+		"materialId": "Glass",
 		"isRecyclable": true,
-		"didYouRecycle": true,
+		"didYouRecycle": false,
     "dateAdded": "06/21/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
 	}

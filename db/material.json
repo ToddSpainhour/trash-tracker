@@ -1,0 +1,29 @@
+{
+  "materialType1": {
+    "name": "Cardboard"
+  },
+  "materialType2": {
+    "name": "Plastic"
+  },
+  "materialType3": {
+    "name": "Paper"
+  },
+  "materialType4": {
+    "name": "Rubber"
+  },
+  "materialType5": {
+    "name": "Glass"
+  },
+  "materialType6": {
+    "name": "Styrofoam"
+  },
+  "materialType7": {
+    "name": "Metal"
+  },
+  "materialType8": {
+    "name": "Food"
+  },
+  "materialType9": {
+    "name": "Other"
+  }
+}

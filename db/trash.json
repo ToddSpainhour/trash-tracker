@@ -1,0 +1,65 @@
+{
+	"trash1": {
+		"trashName": "Veggie Burger Packaging",
+		"trashDescription": "8 Pack",
+		"materialId": "Plastic",
+		"isRecyclable": false,
+		"didYouRecycle": false,
+    "dateAdded": "06/21/2020",
+    "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
+  },
+  "trash2": {
+		"trashName": "Soda Can",
+		"trashDescription": "Dr. Dazzle",
+		"materialId": "Metal",
+		"isRecyclable": true,
+		"didYouRecycle": true,
+    "dateAdded": "06/21/2020",
+    "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
+  },
+  "trash3": {
+		"trashName": "Amazon box",
+		"trashDescription": "Textbook Sized",
+		"materialId": "Cardboard",
+		"isRecyclable": true,
+		"didYouRecycle": true,
+    "dateAdded": "06/21/2020",
+    "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
+  },
+  "trash4": {
+		"trashName": "Laundry Dedergent Jug",
+		"trashDescription": "",
+		"materialId": "Plastic",
+		"isRecyclable": true,
+		"didYouRecycle": true,
+    "dateAdded": "06/21/2020",
+    "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
+  },
+  "trash5": {
+		"trashName": "Junk Mail",
+		"trashDescription": "",
+		"materialId": "Paper",
+		"isRecyclable": true,
+		"didYouRecycle": true,
+    "dateAdded": "06/21/2020",
+    "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
+  },
+  "trash6": {
+		"trashName": "Fast Food Bag",
+		"trashDescription": "Fries",
+		"materialId": "Paper",
+		"isRecyclable": true,
+		"didYouRecycle": true,
+    "dateAdded": "06/21/2020",
+    "uid": "12345"
+  },
+  "trash7": {
+		"trashName": "Spaghetti Sauce",
+		"trashDescription": "26 Fluid Ounces",
+		"materialId": "Paper",
+		"isRecyclable": true,
+		"didYouRecycle": true,
+    "dateAdded": "06/21/2020",
+    "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
+	}
+}

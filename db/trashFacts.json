@@ -1,0 +1,27 @@
+{
+  "fact1": {
+    "randomFact": "Styrofoam never biodegrades! It basically lasts forever!",
+    "factSource": "The Internet!",
+    "materialId": "Styrofoam"
+  },
+  "fact2": {
+    "randomFact": "Greasy cardboard isn't recyclable.",
+    "factSource": "More Internet knowledge!",
+    "materialId": "Cardboard"
+  },
+  "fact3": {
+    "randomFact": "Some plastics can't be recycled. Check local resources to see what you can toss in the recycle bin.",
+    "factSource": "More Internet knowledge!",
+    "materialId": "Plastic"
+  },
+  "fact4": {
+    "randomFact": "Random fact!",
+    "factSource": "The Internet!",
+    "materialId": "Wood"
+  },
+  "fact5": {
+    "randomFact": "Another interesting fact!",
+    "factSource": "More Internet knowledge!",
+    "materialId": "Rubber"
+  }
+}

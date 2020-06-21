@@ -11,7 +11,7 @@ class TrashCard extends React.Component {
   render() {
     const { trashItem } = this.props;
     return (
-      <div className="TrashCard col-4 sm-12">
+      <div className="TrashCard col-md-4 col-sm-12">
         <div className="card border-dark m-3">
           <h3>{trashItem.trashName}</h3>
           <h5>{trashItem.trashDescription}</h5>

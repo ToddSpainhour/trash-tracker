@@ -21,4 +21,8 @@ const getTrashByUid = (uid) => new Promise((resolve, reject) => {
 
 const deleteTrash = (trashId) => axios.delete(`${baseUrl}/trash/${trashId}.json`);
 
-export default { getTrashByUid, deleteTrash };
+const createNewTrash = () => {
+  console.error('you just fired youe createNewTrash function in trashData.js');
+};
+
+export default { getTrashByUid, deleteTrash, createNewTrash };

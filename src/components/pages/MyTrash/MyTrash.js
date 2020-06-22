@@ -29,20 +29,21 @@ class MyTrash extends React.Component {
       .catch((err) => console.error('cannot delete trash', err));
   }
 
-  addTrashEvent = (e) => {
+  openCreateNewTrashForm = (e) => {
     e.preventDefault();
-    trashData.createNewTrash();
+    this.props.history.push('/newtrash/');
   }
 
   render() {
     const { trashArray } = this.state;
+
     const buildTrashCards = trashArray.map((trashItem) => (
       <TrashCard trashItem={trashItem} key={trashItem.id} removeTrash={this.removeTrash}/>
     ));
     return (
       <div className="MyTrash col-12">
         <h5>MyTrash READ</h5>
-        <button className="btn btn-dark btn-sm" onClick={this.addTrashEvent}>Add More Trash</button>
+        <button className="btn btn-dark btn-sm" onClick={this.openCreateNewTrashForm}>Add More Trash</button>
           <div className="row">
               {buildTrashCards}
           </div>

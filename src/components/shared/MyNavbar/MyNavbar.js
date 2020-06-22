@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import RecycleImage from '../../../images/recycle-logo-test-illustrator-inline-1-01.svg';
 import './MyNavbar.scss';
 
 class MyNavbar extends React.Component {
@@ -68,6 +69,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="MyNavbar">
         <Navbar color="light" light expand="md">
+        <img src={RecycleImage} className="banner-logo" alt="Recycle Logo" />
         <NavbarBrand href="/">Trash Tracker</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>

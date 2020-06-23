@@ -1,6 +1,8 @@
 import React from 'react';
 
+import moment from 'moment';
 import authData from '../../../helpers/data/authData';
+import trashData from '../../../helpers/data/trashData';
 
 import './CreateNewTrash.scss';
 
@@ -11,8 +13,6 @@ class CreateNewTrash extends React.Component {
     materialId: '',
     isRecyclable: true,
     didYouRecycle: false,
-    dateAdded: '',
-    uid: '',
   }
 
   nameChange = (e) => {
@@ -37,6 +37,27 @@ class CreateNewTrash extends React.Component {
 
   didYouRecycleChange = (e) => {
     this.setState({ didYouRecycle: e.target.value });
+  }
+
+  saveNewTrash = (e) => {
+    e.preventDefault();
+    const {
+      trashName,
+      trashDescription,
+      materialId,
+      isRecyclable,
+      didYouRecycle,
+    } = this.state;
+    const newTrashItem = {
+      trashName,
+      trashDescription,
+      materialId,
+      isRecyclable,
+      didYouRecycle,
+      dateAdded: moment().format('L'),
+      uid: authData.getUid(),
+    };
+    console.error('your new trash item is...', newTrashItem);
   }
 
   render() {
@@ -87,6 +108,7 @@ class CreateNewTrash extends React.Component {
                   value={materialId}
                   onChange={this.materialChange}>
 
+                  <option hidden>Pick the Material</option>
                   <option>Paper</option>
                   <option>Plastic</option>
                   <option>Cardboard</option>
@@ -160,7 +182,7 @@ class CreateNewTrash extends React.Component {
             </div>
           </div>
 
-            <button type="submit" className="btn btn-dark btn-sm">Submit More Trash</button>
+            <button type="submit" className="btn btn-dark btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button>
           </form>
       </div>
     );

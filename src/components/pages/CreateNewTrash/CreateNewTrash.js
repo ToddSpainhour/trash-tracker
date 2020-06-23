@@ -57,7 +57,9 @@ class CreateNewTrash extends React.Component {
       dateAdded: moment().format('L'),
       uid: authData.getUid(),
     };
-    console.error('your new trash item is...', newTrashItem);
+    trashData.postNewTrash(newTrashItem)
+      .then(() => this.props.history.push('/trackmytrash'))
+      .catch((err) => console.error('cannot create new trash item', err));
   }
 
   render() {
@@ -65,9 +67,6 @@ class CreateNewTrash extends React.Component {
       trashName,
       trashDescription,
       materialId,
-      isRecyclable,
-      didYouRecycle,
-      dateAdded,
     } = this.state;
 
     return (

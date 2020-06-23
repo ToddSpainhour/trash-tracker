@@ -1,4 +1,10 @@
 .CreateNewTrash {
   display: block;
   background-color: #438a5e;
+  .isRecyclableRadio {
+    background-color: grey;
+  }
+  .didYouRecycleRadio {
+    background-color: lightgrey;
+  }
 }

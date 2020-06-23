@@ -21,4 +21,6 @@ const getTrashByUid = (uid) => new Promise((resolve, reject) => {
 
 const deleteTrash = (trashId) => axios.delete(`${baseUrl}/trash/${trashId}.json`);
 
-export default { getTrashByUid, deleteTrash };
+const postNewTrash = (newTrashItem) => axios.post(`${baseUrl}/trash.json`, newTrashItem);
+
+export default { getTrashByUid, deleteTrash, postNewTrash };

@@ -19,8 +19,18 @@ const getTrashByUid = (uid) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getSingleTrash = (trashId) => axios.get(`${baseUrl}/trash/${trashId}.json`);
+
 const deleteTrash = (trashId) => axios.delete(`${baseUrl}/trash/${trashId}.json`);
 
 const postNewTrash = (newTrashItem) => axios.post(`${baseUrl}/trash.json`, newTrashItem);
 
-export default { getTrashByUid, deleteTrash, postNewTrash };
+const putTrash = (trashId, updatedTrashItem) => axios.put(`${baseUrl}/trash/${trashId}.json`, updatedTrashItem);
+
+export default {
+  getTrashByUid,
+  getSingleTrash,
+  deleteTrash,
+  postNewTrash,
+  putTrash,
+};

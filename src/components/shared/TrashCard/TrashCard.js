@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import trashShape from '../../../helpers/propz/trashShape';
@@ -8,10 +9,14 @@ class TrashCard extends React.Component {
   static propTypes = {
     trashItem: trashShape.trashShape,
     removeTrash: PropTypes.func.isRequired,
+    openEditTrashForm: PropTypes.func.isRequired,
   }
 
   render() {
     const { trashItem, removeTrash } = this.props;
+
+    const editLink = `/edittrash/${trashItem.id}`;
+
     return (
       <div className="TrashCard col-md-4 col-sm-12">
         <div className="card border-dark m-3">
@@ -23,7 +28,7 @@ class TrashCard extends React.Component {
           <h6>{trashItem.dateAdded}</h6>
           <div>
           <button className="btn btn-light btn-sm text-muted col-3" onClick={() => removeTrash(trashItem.id)}>Delete</button>
-          <button className="btn btn-light btn-sm text-muted col-3">Edit</button>
+          <Link className="btn btn-light btn-sm text-muted" to={editLink}>Edit</Link>
           </div>
         </div>
       </div>

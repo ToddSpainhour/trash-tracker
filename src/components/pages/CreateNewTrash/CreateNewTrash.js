@@ -32,11 +32,11 @@ class CreateNewTrash extends React.Component {
 
   recyclabaleChange = (e) => {
     console.error('recyclable change func just fired');
-    this.setState({ isRecyclable: e.target.value });
+    this.setState({ isRecyclable: e.target.checked });
   }
 
   didYouRecycleChange = (e) => {
-    this.setState({ didYouRecycle: e.target.value });
+    this.setState({ didYouRecycle: e.target.checked });
   }
 
   saveNewTrash = (e) => {

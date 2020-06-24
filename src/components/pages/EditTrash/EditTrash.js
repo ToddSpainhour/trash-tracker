@@ -47,11 +47,11 @@ class EditTrash extends React.Component {
   }
 
   recyclabaleChange = (e) => {
-    this.setState({ isRecyclable: e.target.value });
+    this.setState({ isRecyclable: e.target.checked });
   }
 
   didYouRecycleChange = (e) => {
-    this.setState({ didYouRecycle: e.target.value });
+    this.setState({ didYouRecycle: e.target.checked });
   }
 
   updateTrash = (e) => {

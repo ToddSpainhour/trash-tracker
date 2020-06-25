@@ -58,7 +58,7 @@ class CreateNewTrash extends React.Component {
       uid: authData.getUid(),
     };
     trashData.postNewTrash(newTrashItem)
-      .then(() => this.props.history.push('/trackmytrash'))
+      .then(() => this.props.history.push('/trashfacts'))
       .catch((err) => console.error('cannot create new trash item', err));
   }
 

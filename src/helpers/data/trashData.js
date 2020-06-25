@@ -27,10 +27,27 @@ const postNewTrash = (newTrashItem) => axios.post(`${baseUrl}/trash.json`, newTr
 
 const putTrash = (trashId, updatedTrashItem) => axios.put(`${baseUrl}/trash/${trashId}.json`, updatedTrashItem);
 
+const getTrashFacts = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/facts.json`)
+    .then((response) => {
+      const trashFactsOnFirebase = response.data;
+      const factArray = [];
+      if (trashFactsOnFirebase) {
+        Object.keys(trashFactsOnFirebase).forEach((fbId) => {
+          trashFactsOnFirebase[fbId].id = fbId;
+          factArray.push(trashFactsOnFirebase[fbId]);
+        });
+      }
+      resolve(factArray);
+    })
+    .catch((err) => reject(err));
+});
+
 export default {
   getTrashByUid,
   getSingleTrash,
   deleteTrash,
   postNewTrash,
   putTrash,
+  getTrashFacts,
 };

@@ -30,18 +30,28 @@ const putTrash = (trashId, updatedTrashItem) => axios.put(`${baseUrl}/trash/${tr
 const getTrashFacts = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/facts.json`)
     .then((response) => {
-      const trashFactsOnFirebase = response.data;
+      const trashFactsFromFirebase = response.data;
+      // console.error('inside trashData your in the middle of the getTrashFacts function it returns...', trashFactsFromFirebase);
       const factArray = [];
-      if (trashFactsOnFirebase) {
-        Object.keys(trashFactsOnFirebase).forEach((fbId) => {
-          trashFactsOnFirebase[fbId].id = fbId;
-          factArray.push(trashFactsOnFirebase[fbId]);
+      if (trashFactsFromFirebase) {
+        Object.keys(trashFactsFromFirebase).forEach((fbId) => {
+          trashFactsFromFirebase[fbId].id = fbId;
+          factArray.push(trashFactsFromFirebase[fbId]);
         });
       }
       resolve(factArray);
+      // console.error('at the end of the getTrashFacts function inside trashData your factArray is...', factArray);
+      // const randomFact = [];
+      // randomFact.push(factArray)[Math.floor(Math.random() * factArray.length)]
+      // return randomFact;
     })
     .catch((err) => reject(err));
 });
+
+// const randomFact = () => {
+//   getTrashFacts();
+//   console.error('')
+// };
 
 export default {
   getTrashByUid,

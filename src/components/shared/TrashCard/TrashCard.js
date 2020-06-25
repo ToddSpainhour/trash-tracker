@@ -9,7 +9,6 @@ class TrashCard extends React.Component {
   static propTypes = {
     trashItem: trashShape.trashShape,
     removeTrash: PropTypes.func.isRequired,
-    openEditTrashForm: PropTypes.func.isRequired,
   }
 
   render() {

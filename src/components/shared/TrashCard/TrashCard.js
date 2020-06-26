@@ -18,18 +18,20 @@ class TrashCard extends React.Component {
 
     const editLink = `/edittrash/${trashItem.id}`;
 
+    let logo;
+    if (trashItem.didYouRecycle === 'true') {
+      logo = <img src= { RecycleImage } alt="recycle logo included in items recycled"/>;
+    } else {
+      logo = <h5>Try and recycle next time</h5>;
+    }
+
     return (
       <div className="TrashCard col-md-4 col-sm-12">
         <div className="card border-dark m-3">
           <h3>{trashItem.trashName}</h3>
           <h5>{trashItem.trashDescription}</h5>
           <h5>{trashItem.materialId}</h5>
-          <h5>{trashItem.isRecyclable}</h5>
-          {/* <h5> {trashItem.didYouRecycle ? 'you recycled. Yippee' : 'Maybe next time'}</h5> */}
-          { trashItem.didYouRecycle
-            ? <img src= { RecycleImage } alt="recycle logo included in items recycled"/>
-            : 'Maybe next time'}
-          <h4>{trashItem.didYouRecycle}</h4>
+          {logo}
           <h6>{trashItem.dateAdded}</h6>
           <div>
           <button className="btn btn-light btn-sm text-muted col-3" onClick={() => removeTrash(trashItem.id)}>Delete</button>

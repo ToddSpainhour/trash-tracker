@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import trashShape from '../../../helpers/propz/trashShape';
-import RecycleImage from '../../../images/recycle-logo-test-illustrator-inline-1-01.svg';
+import RecycleGraphic from '../../../images/recycle-logo.svg';
+import TrashCanGraphic from '../../../images/trash-can.svg';
 
 import './TrashCard.scss';
 
@@ -20,9 +21,9 @@ class TrashCard extends React.Component {
 
     let logo;
     if (trashItem.didYouRecycle === 'true') {
-      logo = <img src= { RecycleImage } alt="recycle logo included in items recycled"/>;
+      logo = <img src= { RecycleGraphic } alt="recycle logo included in items recycled"/>;
     } else {
-      logo = <h5>Try and recycle next time</h5>;
+      logo = <img src= { TrashCanGraphic } alt="trash can for items not recycled"/>;
     }
 
     return (

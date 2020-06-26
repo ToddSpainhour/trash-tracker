@@ -23,7 +23,7 @@ class TrashCard extends React.Component {
     if (trashItem.didYouRecycle === 'true') {
       logo = <img src= { RecycleGraphic } alt="recycle logo included in items recycled"/>;
     } else {
-      logo = <img src= { TrashCanGraphic } alt="trash can for items recycled"/>;
+      logo = <img src= { TrashCanGraphic } alt="trash can for items not recycled"/>;
     }
 
     return (

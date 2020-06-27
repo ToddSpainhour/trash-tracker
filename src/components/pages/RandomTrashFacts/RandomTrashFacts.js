@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FactCard from '../../shared/FactCard/FactCard';
+// import FactCard from '../../shared/FactCard/FactCard';
 import trashData from '../../../helpers/data/trashData';
 
 import './RandomTrashFacts.scss';
@@ -8,36 +8,34 @@ import './RandomTrashFacts.scss';
 class RandomTrashFacts extends React.Component {
   state = {
     facts: [],
+    chosenFact: {},
   }
 
   componentDidMount() {
     this.getFacts();
   }
 
-  // componentDidUpdate(facts) {
-  //   console.error('componentDidUpdate in randomTrashFacts says that facts is...', facts); // undefined
-  // }
-
   getFacts = () => {
     trashData.getTrashFacts()
-      // .then((facts) => this.setState({ facts }))
       .then((facts) => this.setState({ facts }))
-      .catch((err) => console.error('cannot get trash facts', err));
-  }
+      .then(() => {
+        const pickRandomFact = () => this.state.facts[Math.floor(Math.random() * this.state.facts.length)];
+        const chosenFact = pickRandomFact();
+        this.setState({ chosenFact });
+      })
+      .catch((err) => console.error('cannot get facts', err));
+  };
 
   render() {
-    const { facts } = this.state;
-    console.log('facts.length is...', facts.length);
-    // console.error('facts in this.state is', facts);
-    const buildSingleFactCard = facts[Math.floor(Math.random() * facts.length)]; // undefined
-    console.error('buildSingleFactCard in randomTrashData is...', buildSingleFactCard);
-    // this.pickRandomFact();
-    // const factsArray = this.state.facts; // undefined
-    // console.error('inside RandomTrashFacts.js your factsArray is...', factsArray.randomFact); // returns undefined and runs twice?
+    const { chosenFact } = this.state;
+
     return (
-      <div className="RandomTrashFacts">
-        <h5>Random Trash Facts Page</h5>
-      </div>
+    <div className="RandomTrashFacts">
+      <h5>Random Trash Facts Page</h5>
+    <h5>{chosenFact.randomFact}</h5>
+    <h5>{chosenFact.materialId}</h5>
+    <h5>{chosenFact.factSource}</h5>
+    </div>
     );
   }
 }

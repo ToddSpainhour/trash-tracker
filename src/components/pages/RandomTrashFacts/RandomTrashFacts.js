@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-// import FactCard from '../../shared/FactCard/FactCard';
 import trashData from '../../../helpers/data/trashData';
 
 import './RandomTrashFacts.scss';
@@ -35,6 +35,7 @@ class RandomTrashFacts extends React.Component {
     <h5>{chosenFact.randomFact}</h5>
     <h5>{chosenFact.materialId}</h5>
     <h5>{chosenFact.factSource}</h5>
+    <Link to="/trackmytrash" className="btn btn-light btn-sm text-muted">Continue</Link>
     </div>
     );
   }

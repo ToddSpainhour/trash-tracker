@@ -39,7 +39,6 @@ const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
     : (<Redirect to={{ pathname: '/welcome', state: { from: props.location } }} />));
   return <Route {...rest} render={(props) => routeChecker(props)} />;
 };
-// i changed the pathname: '/auth', to what is seen above. seems to be working
 
 class App extends React.Component {
   state = {

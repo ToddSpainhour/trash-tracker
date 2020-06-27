@@ -74,7 +74,6 @@ class EditTrash extends React.Component {
       dateAdded,
       uid: authData.getUid(),
     };
-    console.error('your updated trash item is...', updatedTrashItem);
     trashData.putTrash(trashId, updatedTrashItem)
       .then(() => this.props.history.push('/trackmytrash'))
       .catch((err) => console.error('cannot save edited trash item', err));
@@ -85,9 +84,6 @@ class EditTrash extends React.Component {
       trashName,
       trashDescription,
       materialId,
-      // isRecyclable,
-      // didYouRecycle,
-      // dateAdded,
     } = this.state;
     return (
       <div className="EditTrash col-12">

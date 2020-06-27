@@ -5,8 +5,8 @@ const trashShape = PropTypes.shape({
   trashName: PropTypes.string.isRequired,
   trashDescription: PropTypes.string.isRequired,
   materialId: PropTypes.string.isRequired,
-  isRecyclable: PropTypes.bool.isRequired,
-  didYouRecycle: PropTypes.bool.isRequired,
+  isRecyclable: PropTypes.string.isRequired,
+  didYouRecycle: PropTypes.string.isRequired,
   dateAdded: PropTypes.string.isRequired,
   uid: PropTypes.string.isRequired,
 });

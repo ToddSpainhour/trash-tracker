@@ -20,8 +20,6 @@ class CreateNewTrash extends React.Component {
     trashData.getMaterialTypes()
       .then((materialId) => {
         this.setState({ materialId });
-        const materialsArray = this.state.materialId;
-        console.error('materialsArray is...', materialsArray);
       })
       .catch((err) => console.error('cannot get materials', err));
   }
@@ -36,20 +34,9 @@ class CreateNewTrash extends React.Component {
     this.setState({ trashDescription: e.target.value });
   }
 
-  // ------------------------------------------------------------------------drop down below
-
-  materialChange = (selectedMaterial) => {
-    this.setState({ selectedMaterial });
-    // console.log('your onchange just fired');
+  materialChange = (e) => {
+    this.setState({ selectedMaterial: e.target.value });
   }
-
-  // materialChange = (e) => {
-  //   e.preventDefault();
-  //   this.setState({ materialId: e.target.value });
-  //   // console.log('your onchange just fired');
-  // }
-
-  // ------------------------------------------------------------------------drop down above
 
   recyclabaleChange = (e) => {
     this.setState({ isRecyclable: e.target.value });
@@ -64,14 +51,14 @@ class CreateNewTrash extends React.Component {
     const {
       trashName,
       trashDescription,
-      materialId,
       isRecyclable,
       didYouRecycle,
+      selectedMaterial,
     } = this.state;
     const newTrashItem = {
       trashName,
       trashDescription,
-      materialId,
+      materialId: selectedMaterial,
       isRecyclable,
       didYouRecycle,
       dateAdded: moment().format('L'),
@@ -99,20 +86,6 @@ class CreateNewTrash extends React.Component {
         <h5>Create New Trash Page</h5>
 
           <form>
-{/* -----------------------------------------------------------drop down below--- */}
-            <div>
-              <p>What material is the made of?</p>
-                <select
-                  className="dropdown"
-                  id="userSelectedMaterial"
-                  value={materialId.name}
-                  onChange={this.materialChange}>
-
-                  <option hidden>Pick the Material</option>
-                {dropDownOptions}
-                </select>
-            </div>
-{/* ----------------------------------------------------------drop down above--- */}
 
             <div className="form-group">
               <label htmlFor="userCreatedItemName">Name</label>
@@ -138,87 +111,79 @@ class CreateNewTrash extends React.Component {
               />
             </div>
 
-            {/* <div>
+            <div>
               <p>What material is the made of?</p>
                 <select
                   className="dropdown"
                   id="userSelectedMaterial"
-                  value={materialId}
+                  value={materialId.name}
                   onChange={this.materialChange}>
 
                   <option hidden>Pick the Material</option>
-                  <option>Paper</option>
-                  <option>Plastic</option>
-                  <option>Cardboard</option>
-                  <option>Glass</option>
-                  <option>Metal</option>
-                  <option>Rubber</option>
-                  <option>Styrofoam</option>
-                  <option>Food</option>
-                  <option>Other</option>
+                {dropDownOptions}
                 </select>
-            </div> */}
+            </div>
 
-          <div className="isRecyclableRadio">
-            <h6>Is the item recyclable?</h6>
-              <div className="form-check">
-                <input required
-                className="form-check-input"
-                type="radio"
-                name="recyclable"
-                id="notRecyclable"
-                value={true}
-                onChange={this.recyclabaleChange}
-                />
-                <label className="form-check-label" htmlFor="notRecyclable">
-                  Yes, it is recyclable.
-                </label>
-              </div>
+            <div className="isRecyclableRadio">
+              <h6>Is the item recyclable?</h6>
+                <div className="form-check">
+                  <input required
+                  className="form-check-input"
+                  type="radio"
+                  name="recyclable"
+                  id="notRecyclable"
+                  value={true}
+                  onChange={this.recyclabaleChange}
+                  />
+                  <label className="form-check-label" htmlFor="notRecyclable">
+                    Yes, it is recyclable.
+                  </label>
+                </div>
 
+                <div className="form-check">
+                  <input
+                  className="form-check-input"
+                  type="radio"
+                  name="recyclable"
+                  id="isRecyclable"
+                  value={false}
+                  onChange={this.recyclabaleChange}
+                  />
+                    <label className="form-check-label" htmlFor="isRecyclable">
+                    No. This item is not recyclable.
+                  </label>
+                </div>
+            </div>
+
+            <div className="didYouRecycleRadio">
+              <h6>Did you recycle this item?</h6>
               <div className="form-check">
                 <input
                 className="form-check-input"
-                type="radio"
-                name="recyclable"
-                id="isRecyclable"
-                value={false}
-                onChange={this.recyclabaleChange}
+                type="radio" name="iDidRecycle"
+                id="didRecycle"
+                value={true}
+                onChange={this.didYouRecycleChange}
                 />
-                  <label className="form-check-label" htmlFor="isRecyclable">
-                  No. This item is not recyclable.
+                  <label className="form-check-label" htmlFor="didRecycle">
+                  Yes, I chose to recycle this item.
                 </label>
               </div>
-          </div>
 
-          <div className="didYouRecycleRadio">
-            <h6>Did you recycle this item?</h6>
-            <div className="form-check">
-              <input
-              className="form-check-input"
-              type="radio" name="iDidRecycle"
-              id="didRecycle"
-              value={true}
-              onChange={this.didYouRecycleChange}
-              />
-                <label className="form-check-label" htmlFor="didRecycle">
-                Yes, I chose to recycle this item.
-              </label>
+              <div className="form-check">
+                <input className="form-check-input"
+                type="radio"
+                name="iDidRecycle"
+                id="didNotRecycle"
+                value={false}
+                onChange={this.didYouRecycleChange}
+                />
+                  <label className="form-check-label" htmlFor="didNotRecycle">
+                  No. I didn't recycle this item.
+                </label>
+
+              </div>
             </div>
-
-            <div className="form-check">
-              <input className="form-check-input"
-              type="radio"
-              name="iDidRecycle"
-              id="didNotRecycle"
-              value={false}
-              onChange={this.didYouRecycleChange}
-              />
-                <label className="form-check-label" htmlFor="didNotRecycle">
-                No. I didn't recycle this item.
-              </label>
-
-            </div>
-          </div>
 
             <button type="submit" className="btn btn-dark btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button>
           </form>

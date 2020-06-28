@@ -10,7 +10,7 @@ class CreateNewTrash extends React.Component {
   state = {
     trashName: '',
     trashDescription: '',
-    materialId: '',
+    materialId: [],
     isRecyclable: true,
     didYouRecycle: false,
   }
@@ -74,6 +74,14 @@ class CreateNewTrash extends React.Component {
       materialId,
     } = this.state;
 
+    const materialsArray = this.state.materialId;
+    const dropDownOptions = materialsArray.map((material) => <option key={material.id} value={material.name}>
+      {material.name}
+    </option>);
+
+    console.error('materialsArray is...', materialsArray);
+    console.error('dropDownOptions are...', dropDownOptions);
+
     return (
       <div className="CreateNewTrash col-12">
         <h5>Create New Trash Page</h5>
@@ -113,6 +121,19 @@ class CreateNewTrash extends React.Component {
                   onChange={this.materialChange}>
 
                   <option hidden>Pick the Material</option>
+                {dropDownOptions}
+                </select>
+            </div>
+
+            {/* <div>
+              <p>What material is the made of?</p>
+                <select
+                  className="dropdown"
+                  id="userSelectedMaterial"
+                  value={materialId}
+                  onChange={this.materialChange}>
+
+                  <option hidden>Pick the Material</option>
                   <option>Paper</option>
                   <option>Plastic</option>
                   <option>Cardboard</option>
@@ -123,7 +144,7 @@ class CreateNewTrash extends React.Component {
                   <option>Food</option>
                   <option>Other</option>
                 </select>
-            </div>
+            </div> */}
 
           <div className="isRecyclableRadio">
             <h6>Is the item recyclable?</h6>

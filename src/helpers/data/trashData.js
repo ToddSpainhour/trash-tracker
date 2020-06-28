@@ -43,6 +43,22 @@ const getTrashFacts = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getMaterialTypes = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/material.json`)
+    .then((response) => {
+      const materialsFromFirebase = response.data;
+      const materialId = [];
+      if (materialsFromFirebase) {
+        Object.keys(materialsFromFirebase).forEach((fbId) => {
+          materialsFromFirebase[fbId].id = fbId;
+          materialId.push(materialsFromFirebase[fbId]);
+        });
+      }
+      resolve(materialId);
+    })
+    .catch((err) => reject(err));
+});
+
 export default {
   getTrashByUid,
   getSingleTrash,
@@ -50,4 +66,5 @@ export default {
   postNewTrash,
   putTrash,
   getTrashFacts,
+  getMaterialTypes,
 };

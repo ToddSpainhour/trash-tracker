@@ -15,6 +15,12 @@ class CreateNewTrash extends React.Component {
     didYouRecycle: false,
   }
 
+  componentDidMount() {
+    trashData.getMaterialTypes()
+      .then((materialId) => this.setState({ materialId }))
+      .catch((err) => console.error('cannot get materials', err));
+  }
+
   nameChange = (e) => {
     e.preventDefault();
     this.setState({ trashName: e.target.value });

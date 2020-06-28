@@ -11,13 +11,18 @@ class CreateNewTrash extends React.Component {
     trashName: '',
     trashDescription: '',
     materialId: [],
+    selectedMaterial: '',
     isRecyclable: true,
     didYouRecycle: false,
   }
 
   componentDidMount() {
     trashData.getMaterialTypes()
-      .then((materialId) => this.setState({ materialId }))
+      .then((materialId) => {
+        this.setState({ materialId });
+        const materialsArray = this.state.materialId;
+        console.error('materialsArray is...', materialsArray);
+      })
       .catch((err) => console.error('cannot get materials', err));
   }
 
@@ -31,10 +36,20 @@ class CreateNewTrash extends React.Component {
     this.setState({ trashDescription: e.target.value });
   }
 
-  materialChange = (e) => {
-    e.preventDefault();
-    this.setState({ materialId: e.target.value });
+  // ------------------------------------------------------------------------drop down below
+
+  materialChange = (selectedMaterial) => {
+    this.setState({ selectedMaterial });
+    // console.log('your onchange just fired');
   }
+
+  // materialChange = (e) => {
+  //   e.preventDefault();
+  //   this.setState({ materialId: e.target.value });
+  //   // console.log('your onchange just fired');
+  // }
+
+  // ------------------------------------------------------------------------drop down above
 
   recyclabaleChange = (e) => {
     this.setState({ isRecyclable: e.target.value });
@@ -79,14 +94,25 @@ class CreateNewTrash extends React.Component {
       {material.name}
     </option>);
 
-    console.error('materialsArray is...', materialsArray);
-    console.error('dropDownOptions are...', dropDownOptions);
-
     return (
       <div className="CreateNewTrash col-12">
         <h5>Create New Trash Page</h5>
 
           <form>
+{/* -----------------------------------------------------------drop down below--- */}
+            <div>
+              <p>What material is the made of?</p>
+                <select
+                  className="dropdown"
+                  id="userSelectedMaterial"
+                  value={materialId.name}
+                  onChange={this.materialChange}>
+
+                  <option hidden>Pick the Material</option>
+                {dropDownOptions}
+                </select>
+            </div>
+{/* ----------------------------------------------------------drop down above--- */}
 
             <div className="form-group">
               <label htmlFor="userCreatedItemName">Name</label>
@@ -110,19 +136,6 @@ class CreateNewTrash extends React.Component {
               onChange={this.descriptionChange}
               placeholder="One Gallon"
               />
-            </div>
-
-            <div>
-              <p>What material is the made of?</p>
-                <select
-                  className="dropdown"
-                  id="userSelectedMaterial"
-                  value={materialId}
-                  onChange={this.materialChange}>
-
-                  <option hidden>Pick the Material</option>
-                {dropDownOptions}
-                </select>
             </div>
 
             {/* <div>

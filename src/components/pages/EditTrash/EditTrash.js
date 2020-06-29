@@ -8,7 +8,8 @@ class EditTrash extends React.Component {
   state = {
     trashName: '',
     trashDescription: '',
-    materialId: '',
+    materialId: [],
+    selectedMaterial: '',
     isRecyclable: false,
     didYouRecycle: false,
     dateAdded: '',
@@ -22,11 +23,16 @@ class EditTrash extends React.Component {
         this.setState({
           trashName: trash.trashName,
           trashDescription: trash.trashDescription,
-          materialId: trash.materialId,
+          // materialId: trash.materialId,
+          selectedMaterial: trash.materialId,
           isRecyclable: trash.isRecyclable,
           didYouRecycle: trash.didYouRecycle,
           dateAdded: trash.dateAdded,
         });
+        trashData.getMaterialTypes()
+          .then((materialId) => {
+            this.setState({ materialId });
+          });
       })
       .catch((err) => console.error('cannot get singleTrash to edit'));
   }
@@ -43,7 +49,7 @@ class EditTrash extends React.Component {
 
   materialChange = (e) => {
     e.preventDefault();
-    this.setState({ materialId: e.target.value });
+    this.setState({ selectedMaterial: e.target.value });
   }
 
   recyclabaleChange = (e) => {
@@ -60,15 +66,16 @@ class EditTrash extends React.Component {
     const {
       trashName,
       trashDescription,
-      materialId,
+      // materialId,
       isRecyclable,
       didYouRecycle,
       dateAdded,
+      selectedMaterial,
     } = this.state;
     const updatedTrashItem = {
       trashName,
       trashDescription,
-      materialId,
+      materialId: selectedMaterial,
       isRecyclable,
       didYouRecycle,
       dateAdded,
@@ -85,6 +92,12 @@ class EditTrash extends React.Component {
       trashDescription,
       materialId,
     } = this.state;
+
+    const materialsArray = this.state.materialId;
+    const dropDownOptions = materialsArray.map((material) => <option key={material.id} value={material.name}>
+      {material.name}
+    </option>);
+
     return (
       <div className="EditTrash col-12">
         <h5>Edit Trash Page</h5>
@@ -119,19 +132,11 @@ class EditTrash extends React.Component {
                 <select
                   className="dropdown"
                   id="userSelectedMaterial"
-                  value={materialId}
+                  value={materialId.name}
                   onChange={this.materialChange}>
 
                   <option hidden>Pick the Material</option>
-                  <option>Paper</option>
-                  <option>Plastic</option>
-                  <option>Cardboard</option>
-                  <option>Glass</option>
-                  <option>Metal</option>
-                  <option>Rubber</option>
-                  <option>Styrofoam</option>
-                  <option>Food</option>
-                  <option>Other</option>
+              {dropDownOptions}
                 </select>
             </div>
 

@@ -8,7 +8,7 @@ class EditTrash extends React.Component {
   state = {
     trashName: '',
     trashDescription: '',
-    materialId: '',
+    materialId: [],
     selectedMaterial: '',
     isRecyclable: false,
     didYouRecycle: false,
@@ -67,8 +67,13 @@ class EditTrash extends React.Component {
 
   materialChange = (e) => {
     e.preventDefault();
-    this.setState({ materialId: e.target.value });
+    this.setState({ selectedMaterial: e.target.value });
   }
+
+  // materialChange = (e) => {
+  //   e.preventDefault();
+  //   this.setState({ materialId: e.target.value });
+  // }
 
   recyclabaleChange = (e) => {
     this.setState({ isRecyclable: e.target.value });
@@ -84,15 +89,16 @@ class EditTrash extends React.Component {
     const {
       trashName,
       trashDescription,
-      materialId,
+      // materialId,
       isRecyclable,
       didYouRecycle,
       dateAdded,
+      selectedMaterial,
     } = this.state;
     const updatedTrashItem = {
       trashName,
       trashDescription,
-      materialId,
+      materialId: selectedMaterial,
       isRecyclable,
       didYouRecycle,
       dateAdded,
@@ -109,6 +115,12 @@ class EditTrash extends React.Component {
       trashDescription,
       materialId,
     } = this.state;
+
+    const materialsArray = this.state.materialId;
+    const dropDownOptions = materialsArray.map((material) => <option key={material.id} value={material.name}>
+      {material.name}
+    </option>);
+
     return (
       <div className="EditTrash col-12">
         <h5>Edit Trash Page</h5>
@@ -143,6 +155,19 @@ class EditTrash extends React.Component {
                 <select
                   className="dropdown"
                   id="userSelectedMaterial"
+                  value={materialId.name}
+                  onChange={this.materialChange}>
+
+                  <option hidden>Pick the Material</option>
+              {dropDownOptions}
+                </select>
+            </div>
+
+            {/* <div>
+              <p>What material is the made of?</p>
+                <select
+                  className="dropdown"
+                  id="userSelectedMaterial"
                   value={materialId}
                   onChange={this.materialChange}>
 
@@ -157,7 +182,7 @@ class EditTrash extends React.Component {
                   <option>Food</option>
                   <option>Other</option>
                 </select>
-            </div>
+            </div> */}
 
           <div className="isRecyclableRadio">
             <h6>Is the item recyclable?</h6>

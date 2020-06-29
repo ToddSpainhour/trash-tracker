@@ -9,6 +9,7 @@ class EditTrash extends React.Component {
     trashName: '',
     trashDescription: '',
     materialId: '',
+    selectedMaterial: '',
     isRecyclable: false,
     didYouRecycle: false,
     dateAdded: '',
@@ -22,14 +23,37 @@ class EditTrash extends React.Component {
         this.setState({
           trashName: trash.trashName,
           trashDescription: trash.trashDescription,
-          materialId: trash.materialId,
+          // materialId: trash.materialId,
+          selectedMaterial: trash.materialId,
           isRecyclable: trash.isRecyclable,
           didYouRecycle: trash.didYouRecycle,
           dateAdded: trash.dateAdded,
         });
+        trashData.getMaterialTypes()
+          .then((materialId) => {
+            this.setState({ materialId });
+          });
       })
       .catch((err) => console.error('cannot get singleTrash to edit'));
   }
+
+  // componentDidMount() {
+  //   const editId = this.props.match.params.trashId;
+  //   trashData.getSingleTrash(editId)
+  //     .then((response) => {
+  //       const trash = response.data;
+  //       this.setState({
+  //         trashName: trash.trashName,
+  //         trashDescription: trash.trashDescription,
+  //         // materialId: trash.materialId,
+  //         selectedMaterial: trash.materialId,
+  //         isRecyclable: trash.isRecyclable,
+  //         didYouRecycle: trash.didYouRecycle,
+  //         dateAdded: trash.dateAdded,
+  //       });
+  //     })
+  //     .catch((err) => console.error('cannot get singleTrash to edit'));
+  // }
 
   nameChange = (e) => {
     e.preventDefault();

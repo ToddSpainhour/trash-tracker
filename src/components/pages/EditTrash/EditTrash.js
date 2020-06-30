@@ -132,7 +132,6 @@ class EditTrash extends React.Component {
                   id="userSelectedMaterial"
                   value={selectedMaterial}
                   onChange={this.materialChange}
-
                   >
 
                   <option hidden>Pick the Material</option>

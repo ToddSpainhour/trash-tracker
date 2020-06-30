@@ -20,11 +20,9 @@ class EditTrash extends React.Component {
     trashData.getSingleTrash(editId)
       .then((response) => {
         const trash = response.data;
-        console.error('your componentidMount in editTrash getSingleTrash function returns...', trash);
         this.setState({
           trashName: trash.trashName,
           trashDescription: trash.trashDescription,
-          // materialId: trash.selectedMaterial,
           selectedMaterial: trash.materialId,
           isRecyclable: trash.isRecyclable,
           didYouRecycle: trash.didYouRecycle,
@@ -92,15 +90,12 @@ class EditTrash extends React.Component {
       trashName,
       trashDescription,
       materialId,
-      // recycleRadioChecked,
     } = this.state;
 
     const materialsArray = this.state.materialId;
     const dropDownOptions = materialsArray.map((material) => <option key={material.id} value={material.name}>
       {material.name}
     </option>);
-
-    console.error('this.state.didYouRecycle is...', this.state.didYouRecycle);
 
     return (
       <div className="EditTrash col-12">
@@ -177,7 +172,7 @@ class EditTrash extends React.Component {
                 </label>
               </div>
           </div>
-{/* ------------------------------------------------------------------did You Recycle Radio below */}
+
           <div className="didYouRecycleRadio">
             <h6>Did you recycle this item?</h6>
 

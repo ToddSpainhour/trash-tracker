@@ -65,7 +65,6 @@ class EditTrash extends React.Component {
     const {
       trashName,
       trashDescription,
-      // materialId,
       isRecyclable,
       didYouRecycle,
       dateAdded,
@@ -89,7 +88,7 @@ class EditTrash extends React.Component {
     const {
       trashName,
       trashDescription,
-      materialId,
+      selectedMaterial,
     } = this.state;
 
     const materialsArray = this.state.materialId;
@@ -131,8 +130,10 @@ class EditTrash extends React.Component {
                 <select
                   className="dropdown"
                   id="userSelectedMaterial"
-                  value={materialId.name}
-                  onChange={this.materialChange}>
+                  value={selectedMaterial}
+                  onChange={this.materialChange}
+
+                  >
 
                   <option hidden>Pick the Material</option>
               {dropDownOptions}

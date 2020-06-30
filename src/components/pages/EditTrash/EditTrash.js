@@ -87,28 +87,29 @@ class EditTrash extends React.Component {
       .catch((err) => console.error('cannot save edited trash item', err));
   }
 
+  // recycleRadioChecked = () => {
+  //   const recycledChecked = this.state.didYouRecycle ? 'checked = true' : 'checked = false';
+  //   return recycledChecked;
+  // };
+
   render() {
     const {
       trashName,
       trashDescription,
       materialId,
+      // recycleRadioChecked,
     } = this.state;
 
     // -------------------------radio logic below
-    // let didYouRecycleIsChecked = checked;
-    const recycleRadio = this.state.didYouRecycle;
-    console.error('this.state.didYouRecycle is...', recycleRadio);
-    if (recycleRadio === 'true') {
-      console.error('didYourRecycle is true');
-    } else {
-      console.error('didYourRecycle is false');
-    }
+
     // -------------------------radio logic above
 
     const materialsArray = this.state.materialId;
     const dropDownOptions = materialsArray.map((material) => <option key={material.id} value={material.name}>
       {material.name}
     </option>);
+
+    console.error('this.state.didYouRecycle is...', this.state.didYouRecycle);
 
     return (
       <div className="EditTrash col-12">
@@ -182,6 +183,7 @@ class EditTrash extends React.Component {
                 </label>
               </div>
           </div>
+{/* ------------------------------------------------------------------did You Recycle Radio below */}
           <div className="didYouRecycleRadio">
             <h6>Did you recycle this item?</h6>
             <div className="form-check">
@@ -191,6 +193,10 @@ class EditTrash extends React.Component {
               id="didRecycle"
               value={true}
               onChange={this.didYouRecycleChange}
+              checked={this.state.didYouRecycle === 'true' ? 'checked' : '' }
+              // {...recycleRadioChecked}
+              // checked={true} // this is what we need
+              // checked={didYouRecycleRadio}
               />
                 <label className="form-check-label" htmlFor="didRecycle">
                 Yes, I chose to recycle this item.
@@ -204,6 +210,8 @@ class EditTrash extends React.Component {
               id="didNotRecycle"
               value={false}
               onChange={this.didYouRecycleChange}
+              checked={this.state.didYouRecycle === 'false' ? 'checked' : '' }
+
               />
                 <label className="form-check-label" htmlFor="didNotRecycle">
                 No. I didn't recycle this item.
@@ -211,6 +219,7 @@ class EditTrash extends React.Component {
 
             </div>
           </div>
+{/* ------------------------------------------------------------------did You Recycle Radio above */}
 
             <button type="submit" className="btn btn-dark btn-sm" onClick={this.updateTrash}>Update This Trash</button>
           </form>

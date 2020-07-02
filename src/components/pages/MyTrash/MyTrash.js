@@ -10,6 +10,8 @@ import './MyTrash.scss';
 class MyTrash extends React.Component {
   state = {
     trashArray: [],
+    numberOfRecycledItems: 0,
+    recycledNumber: 0,
   }
 
   componentDidMount() {
@@ -19,7 +21,14 @@ class MyTrash extends React.Component {
   getTrash = () => {
     const uid = authData.getUid();
     trashData.getTrashByUid(uid)
-      .then((trashArray) => this.setState({ trashArray }))
+      .then((trashArray) => {
+        this.setState({ trashArray });
+        const newArray = this.state.trashArray.map((item) => item.didYouRecycle);
+        const amountOfRecycledItems = newArray.filter((a) => a === 'true');
+        const recycledNumber = amountOfRecycledItems.length;
+        console.error('recycledNumber is...', recycledNumber);
+        this.setState({ numberOfRecycledItems: recycledNumber });
+      })
       .catch((err) => console.error('connot get trash...', err));
   }
 
@@ -35,8 +44,8 @@ class MyTrash extends React.Component {
   }
 
   render() {
-    const { trashArray } = this.state;
-
+    const { trashArray, numberOfRecycledItems } = this.state;
+    const totalNumberOfItems = this.state.trashArray.length;
     const buildTrashCards = trashArray.map((trashItem) => (
       <TrashCard trashItem={trashItem} key={trashItem.id} removeTrash={this.removeTrash}/>
     ));
@@ -44,6 +53,9 @@ class MyTrash extends React.Component {
       <div className="MyTrash col-12">
         <h5>MyTrash READ</h5>
         <button className="btn btn-dark btn-sm" onClick={this.openCreateNewTrashForm}>Add More Trash</button>
+        <div className="my-trash-stats">
+    <h5>Out of {totalNumberOfItems} items you've recycled {numberOfRecycledItems}!</h5>
+        </div>
           <div className="row">
               {buildTrashCards}
           </div>

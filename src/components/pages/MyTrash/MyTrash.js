@@ -11,29 +11,50 @@ class MyTrash extends React.Component {
   state = {
     trashArray: [],
     numberOfRecycedItems: 0,
+    recycledNumber: 0,
   }
 
   componentDidMount() {
     this.getTrash();
+    // this.howManyRecycled();
   }
+
+  // getTrash = () => {
+  //   const uid = authData.getUid();
+  //   trashData.getTrashByUid(uid)
+  //     .then((trashArray) => this.setState({ trashArray }))
+  //     .catch((err) => console.error('connot get trash...', err));
+  // }
 
   getTrash = () => {
     const uid = authData.getUid();
     trashData.getTrashByUid(uid)
-      .then((trashArray) => this.setState({ trashArray }))
+      .then((trashArray) => {
+        this.setState({ trashArray });
+        const newArray = this.state.trashArray.map((item) => item.didYouRecycle);
+        const amountOfRecycledItems = newArray.filter((a) => a === 'true');
+        const recycledNumber = amountOfRecycledItems.length;
+        console.error('recycledNumber is...', recycledNumber);
+        this.setState({ numberOfRecycedItems: recycledNumber });
+      })
       .catch((err) => console.error('connot get trash...', err));
   }
 
-  howManyRecycled = () => {
-    const newArray = this.state.trashArray.map((item) => item.didYouRecycle);
-    const amountOfRecycledItems = newArray.filter((a) => a === 'true');
-    console.error('newArray is...', newArray);
-    console.error('amountOfRecycledItems is...', amountOfRecycledItems);
-    const recycledNumber = amountOfRecycledItems.length;
-    console.error('recycledNumber is...', recycledNumber);
-  }
+  // howManyRecycled = () => {
+  //   const newArray = this.state.trashArray.map((item) => item.didYouRecycle);
+  //   const amountOfRecycledItems = newArray.filter((a) => a === 'true');
+  //   // console.error('newArray is...', newArray);
+  //   // console.error('amountOfRecycledItems is...', amountOfRecycledItems);
+  //   const recycledNumber = amountOfRecycledItems.length;
+  //   console.error('recycledNumber is...', recycledNumber);
+  //   // return recycledNumber;
+  //   // this.setState({ numberOfRecycedItems: recycledNumber });
+  // }
 
-  // willThisWork = this.howManyRecycled();
+  // componentDidUpdate() {
+  //   const numberOfRecycledItems = () => this.howManyRecycled();
+  //   this.setState({ numberOfRecycledItems });
+  // }
 
   removeTrash = (trashId) => {
     trashData.deleteTrash(trashId)
@@ -48,8 +69,8 @@ class MyTrash extends React.Component {
 
   render() {
     const { trashArray } = this.state;
-    // this.willThisWork();
-    this.howManyRecycled();
+    // this.howManyRecycled();
+    // this.numberOfRecycledItems();
 
     const buildTrashCards = trashArray.map((trashItem) => (
       <TrashCard trashItem={trashItem} key={trashItem.id} removeTrash={this.removeTrash}/>
@@ -60,8 +81,6 @@ class MyTrash extends React.Component {
         <button className="btn btn-dark btn-sm" onClick={this.openCreateNewTrashForm}>Add More Trash</button>
         <div className="my-trash-stats">
     {/* <h5>Out of {myTrashArrayLength} items you've recycled  items</h5> */}
-    <h5>You recycled items!</h5>
-
         </div>
           <div className="row">
               {buildTrashCards}

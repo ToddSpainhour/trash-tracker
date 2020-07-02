@@ -68,7 +68,7 @@ class MyTrash extends React.Component {
   }
 
   render() {
-    const { trashArray } = this.state;
+    const { trashArray, numberOfRecycedItems } = this.state;
     // this.howManyRecycled();
     // this.numberOfRecycledItems();
 
@@ -80,7 +80,7 @@ class MyTrash extends React.Component {
         <h5>MyTrash READ</h5>
         <button className="btn btn-dark btn-sm" onClick={this.openCreateNewTrashForm}>Add More Trash</button>
         <div className="my-trash-stats">
-    {/* <h5>Out of {myTrashArrayLength} items you've recycled  items</h5> */}
+    <h5>Out of xyz items you've recycled {numberOfRecycedItems} items</h5>
         </div>
           <div className="row">
               {buildTrashCards}

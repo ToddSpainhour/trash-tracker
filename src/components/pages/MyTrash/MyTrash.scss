@@ -1,4 +1,20 @@
+@import '../../../styles/variables';
+
 .MyTrash {
   display: block;
-  background-color: #438a5e;
+  background-color: $cream;
+  // margin-top: 25px;
+  .my-trash-banner {
+    background-color: $cream;
+    padding: 25px 0px 25px;
+  }
+  .add-more-button {
+    color: $cream;
+    background-color: $blue;
+    margin-left: 10px;
+  }
+  .add-more-button:hover {
+    color: $shadow;
+    background-color: $lightGreen;
+  }
 }

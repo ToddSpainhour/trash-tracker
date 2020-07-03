@@ -1,6 +1,8 @@
+@import '../../../styles/variables'; 
+
 .MyNavbar {
   display: block;
-  background-color: #436f8a;
+  background-color: $cream;
   .banner-logo {
     height: 3rem;
     margin-right: .5rem;

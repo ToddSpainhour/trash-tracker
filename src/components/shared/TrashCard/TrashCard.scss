@@ -1,10 +1,33 @@
+@import '../../../styles/variables';
+
 .TrashCard {
   display: block;
-  background-color: #f7fbe1;
+  // background-color: $darkGreen;
+  box-shadow: 30px, 30px;
   border-width: 1px;
   border-color: black;
   border-style: solid;
   img {
     max-height: 50px;
   }
+  .card-bkg {
+    background-color: $cream;
+  }
+  .card {
+    height: 90%
+  }
+  .btn {
+    background-color: $lightGreen;
+    margin-left: 10px;
+  }
+  // .card-buttons {
+  //   display: flex;
+  //   justify-content: center;
+  // }
+
+  .btn:hover {
+    color: $cream;
+    background-color: $blue;
+  }
 }
+

@@ -28,15 +28,15 @@ class TrashCard extends React.Component {
 
     return (
       <div className="TrashCard col-md-4 col-sm-12">
-        <div className="card border-dark m-3">
+        <div className="card border-dark m-3 p-3 card-bkg">
           <h3>{trashItem.trashName}</h3>
           <h5>{trashItem.trashDescription}</h5>
           <h5>{trashItem.materialId}</h5>
           {logo}
           <h6>{trashItem.dateAdded}</h6>
-          <div>
-          <button className="btn btn-light btn-sm text-muted col-3" onClick={() => removeTrash(trashItem.id)}>Delete</button>
-          <Link className="btn btn-light btn-sm text-muted" to={editLink}>Edit</Link>
+          <div className="card-buttons">
+          <Link className="btn btn-sm" to={editLink}>Edit</Link>
+          <button className="btn btn-sm col-3" onClick={() => removeTrash(trashItem.id)}>Delete</button>
           </div>
         </div>
       </div>

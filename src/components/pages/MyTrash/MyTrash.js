@@ -51,14 +51,16 @@ class MyTrash extends React.Component {
     ));
     return (
       <div className="MyTrash col-12">
-        <h5>MyTrash READ</h5>
-        <button className="btn btn-dark btn-sm" onClick={this.openCreateNewTrashForm}>Add More Trash</button>
-        <div className="my-trash-stats">
-    <h5>Out of {totalNumberOfItems} items you've recycled {numberOfRecycledItems}!</h5>
+        <div className=" my-trash-banner">
+          <h5>MyTrash READ</h5>
+            <button className="btn btn-sm add-more-button" onClick={this.openCreateNewTrashForm}>Add More Trash</button>
+              <div className="my-trash-stats">
+                <h5>Out of {totalNumberOfItems} items you've recycled {numberOfRecycledItems}!</h5>
+              </div>
         </div>
-          <div className="row">
-              {buildTrashCards}
-          </div>
+        <div className="row">
+          {buildTrashCards}
+        </div>
       </div>
     );
   }

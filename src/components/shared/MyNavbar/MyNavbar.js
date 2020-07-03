@@ -68,7 +68,7 @@ class MyNavbar extends React.Component {
 
     return (
       <div className="MyNavbar">
-        <Navbar color="light" light expand="md">
+        <Navbar light expand="md">
         <img src={RecycleGraphic} className="banner-logo" alt="Recycle Logo" />
         <NavbarBrand href="/">Trash Tracker</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />

@@ -3,5 +3,20 @@
 @import 'variables';
 
 body {
-  background-color: $favColor;
+  background-color: $blue;
+  background-image: repeating-linear-gradient(
+    45deg,
+    $cream,
+    $cream,
+    1px,
+    $darkGreen,
+    $darkGreen,
+    1px,
+    // $darkGreen 5px,
+    // $lightGreen 1px,
+    // transparent 45px,
+    transparent 125px 
+  )
+  // background-color: #D3D3D3;
+  // background-color: lightgrey;
 }

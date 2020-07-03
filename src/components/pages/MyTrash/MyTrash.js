@@ -1,5 +1,4 @@
 import React from 'react';
-// import moment from 'moment';
 
 import authData from '../../../helpers/data/authData';
 import trashData from '../../../helpers/data/trashData';
@@ -18,20 +17,6 @@ class MyTrash extends React.Component {
   componentDidMount() {
     this.getTrash();
   }
-
-  // getTrash = () => {
-  //   const uid = authData.getUid();
-  //   trashData.getTrashByUid(uid)
-  //     .then((trashArray) => {
-  //       this.setState({ trashArray });
-  //       const newArray = this.state.trashArray.map((item) => item.didYouRecycle);
-  //       const amountOfRecycledItems = newArray.filter((a) => a === 'true');
-  //       const recycledNumber = amountOfRecycledItems.length;
-  //       console.error('recycledNumber is...', recycledNumber);
-  //       this.setState({ numberOfRecycledItems: recycledNumber });
-  //     })
-  //     .catch((err) => console.error('connot get trash...', err));
-  // }
 
   getTrash = () => {
     const uid = authData.getUid();

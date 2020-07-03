@@ -5,7 +5,7 @@
 		"materialId": "Plastic",
 		"isRecyclable": "false",
 		"didYouRecycle": "false",
-    "dateAdded": "06/21/2020",
+    "dateAdded": "06/20/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
   "trash2": {
@@ -23,7 +23,7 @@
 		"materialId": "Cardboard",
 		"isRecyclable": "true",
 		"didYouRecycle": "true",
-    "dateAdded": "06/21/2020",
+    "dateAdded": "06/22/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
   "trash4": {
@@ -32,7 +32,7 @@
 		"materialId": "Plastic",
 		"isRecyclable": "true",
 		"didYouRecycle": "false",
-    "dateAdded": "06/21/2020",
+    "dateAdded": "06/23/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
   "trash5": {
@@ -41,7 +41,7 @@
 		"materialId": "Paper",
 		"isRecyclable": "true",
 		"didYouRecycle": "true",
-    "dateAdded": "06/21/2020",
+    "dateAdded": "06/24/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
   "trash6": {
@@ -50,7 +50,7 @@
 		"materialId": "Paper",
 		"isRecyclable": "true",
 		"didYouRecycle": "true",
-    "dateAdded": "06/21/2020",
+    "dateAdded": "06/25/2020",
     "uid": "12345"
   },
   "trash7": {
@@ -59,7 +59,7 @@
 		"materialId": "Glass",
 		"isRecyclable": "true",
 		"didYouRecycle": "false",
-    "dateAdded": "06/21/2020",
+    "dateAdded": "06/26/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
 	}
 }

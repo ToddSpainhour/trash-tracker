@@ -22,11 +22,12 @@ class MyTrash extends React.Component {
     const uid = authData.getUid();
     trashData.getTrashByUid(uid)
       .then((trashArray) => {
+        const Moment = require('moment');
+        trashArray.sort((oldest, newest) => new Moment(newest.dateAdded).format('MMDDYYYY') - new Moment(oldest.dateAdded).format('MMDDYYYY'));
         this.setState({ trashArray });
         const newArray = this.state.trashArray.map((item) => item.didYouRecycle);
         const amountOfRecycledItems = newArray.filter((a) => a === 'true');
         const recycledNumber = amountOfRecycledItems.length;
-        console.error('recycledNumber is...', recycledNumber);
         this.setState({ numberOfRecycledItems: recycledNumber });
       })
       .catch((err) => console.error('connot get trash...', err));

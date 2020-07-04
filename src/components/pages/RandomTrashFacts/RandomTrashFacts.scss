@@ -1,4 +1,34 @@
+@import '../../../styles/variables';
+
 .RandomTrashFacts {
   display: block;
-  background-color: #438a5e;
+  background-color: $cream;
+  margin-top: 10%;
+  border-radius: 25px;
+
+  .fact-header {
+    margin-top: 30px;
+  }
+
+  .fact-text {
+    margin-top: 10px;
+  }
+
+  .fact-source {
+    margin-top: 10px;
+  }
+
+  .btn {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: $blue;
+    color: $cream;
+  }
+
+  .btn:hover {
+    color: $cream;
+    background-color: $lightGreen;
+    color: $shadow;
+
+  }
 }

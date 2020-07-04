@@ -30,12 +30,12 @@ class RandomTrashFacts extends React.Component {
     const { chosenFact } = this.state;
 
     return (
-    <div className="RandomTrashFacts">
-      <h5>Random Trash Facts Page</h5>
-    <h5>{chosenFact.randomFact}</h5>
-    <h5>{chosenFact.materialId}</h5>
-    <h5>{chosenFact.factSource}</h5>
-    <Link to="/trackmytrash" className="btn btn-light btn-sm text-muted">Continue</Link>
+    <div className="RandomTrashFacts col-12">
+      <h2 className="fact-header">Did you know...</h2>
+    <h4 className="fact-text col-10 offset-1">{chosenFact.randomFact}</h4>
+    {/* <h5>{chosenFact.materialId}</h5> */}
+    <h6 className="fact-source">Source: {chosenFact.factSource}</h6>
+    <Link to="/trackmytrash" className="btn">Continue</Link>
     </div>
     );
   }

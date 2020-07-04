@@ -12,6 +12,7 @@ class EditTrash extends React.Component {
     selectedMaterial: '',
     isRecyclable: false,
     didYouRecycle: false,
+    timestampForSorting: 0,
     dateAdded: '',
   };
 
@@ -26,6 +27,7 @@ class EditTrash extends React.Component {
           selectedMaterial: trash.materialId,
           isRecyclable: trash.isRecyclable,
           didYouRecycle: trash.didYouRecycle,
+          timestampForSorting: trash.timestampForSorting,
           dateAdded: trash.dateAdded,
         });
         trashData.getMaterialTypes()
@@ -67,6 +69,7 @@ class EditTrash extends React.Component {
       trashDescription,
       isRecyclable,
       didYouRecycle,
+      timestampForSorting,
       dateAdded,
       selectedMaterial,
     } = this.state;
@@ -76,6 +79,7 @@ class EditTrash extends React.Component {
       materialId: selectedMaterial,
       isRecyclable,
       didYouRecycle,
+      timestampForSorting,
       dateAdded,
       uid: authData.getUid(),
     };

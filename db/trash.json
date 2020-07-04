@@ -1,46 +1,51 @@
 {
 	"trash1": {
-		"trashName": "Veggie Burger Packaging",
+		"trashName": "1 Veggie Burger Packaging",
 		"trashDescription": "8 Pack",
 		"materialId": "Plastic",
 		"isRecyclable": "false",
 		"didYouRecycle": "false",
-    "dateAdded": "06/20/2020",
+		"dateAdded": "06/20/2020",
+		"timestampForSorting": "1593827330001",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
   "trash2": {
-		"trashName": "Soda Can",
+		"trashName": "2 Soda Can",
 		"trashDescription": "Dr. Dazzle",
 		"materialId": "Metal",
 		"isRecyclable": "true",
 		"didYouRecycle": "true",
+		"timestampForSorting": "1593827330002",
     "dateAdded": "06/21/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
   "trash3": {
-		"trashName": "Amazon box",
+		"trashName": "3 Amazon box",
 		"trashDescription": "Textbook Sized",
 		"materialId": "Cardboard",
 		"isRecyclable": "true",
 		"didYouRecycle": "true",
+		"timestampForSorting": "1593827330003",
     "dateAdded": "06/22/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
   "trash4": {
-		"trashName": "Laundry Dedergent Jug",
+		"trashName": "4 Laundry Dedergent Jug",
 		"trashDescription": "Family Sized",
 		"materialId": "Plastic",
 		"isRecyclable": "true",
 		"didYouRecycle": "false",
+		"timestampForSorting": "1593827330004",
     "dateAdded": "06/23/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
   "trash5": {
-		"trashName": "Junk Mail",
+		"trashName": "5 Junk Mail",
 		"trashDescription": "So many deals...",
 		"materialId": "Paper",
 		"isRecyclable": "true",
 		"didYouRecycle": "true",
+		"timestampForSorting": "1593827330005",
     "dateAdded": "06/24/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
   },
@@ -59,6 +64,7 @@
 		"materialId": "Glass",
 		"isRecyclable": "true",
 		"didYouRecycle": "false",
+		"timestampForSorting": "1593827330006",
     "dateAdded": "06/26/2020",
     "uid": "4gjup6nmXBgB9E8HXooyQawOHf83"
 	}

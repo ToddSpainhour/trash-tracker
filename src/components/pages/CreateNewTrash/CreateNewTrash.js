@@ -113,7 +113,7 @@ class CreateNewTrash extends React.Component {
             </div>
 
             <div>
-              <p className="dropdown-text">What material is the made of?</p>
+              <p className="dropdown-text">What material is the item made of?</p>
                 <select
                   className="dropdown"
                   id="userSelectedMaterial"

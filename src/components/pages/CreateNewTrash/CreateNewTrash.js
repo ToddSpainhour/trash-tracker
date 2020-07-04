@@ -61,7 +61,8 @@ class CreateNewTrash extends React.Component {
       materialId: selectedMaterial,
       isRecyclable,
       didYouRecycle,
-      dateAdded: moment().format('L'),
+      timestampForSorting: Date.now(),
+      dateAdded: moment().format('L'), // this is to be displayed on the card
       uid: authData.getUid(),
     };
     trashData.postNewTrash(newTrashItem)

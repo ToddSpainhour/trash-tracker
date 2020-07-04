@@ -1,4 +1,15 @@
+@import '../../../styles/variables';
+
 .Footer {
   display: block;
-  background-color: #436f8a
+  position: absolute;
+  height: 5rem;
+  bottom: 0;
+  width: 100%;
+  background-color: $shadow;
+  padding-top: 10px;
+  p {
+    color: $lightGreen;
+    margin: 5px;
+  }
 }

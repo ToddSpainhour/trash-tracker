@@ -1,4 +1,57 @@
+@import '../../../styles/variables';
+
 .EditTrash {
   display: block;
-  background-color: #438a5e;
+  background-color: $cream;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  .form-title {
+    margin-top: 5%;
+  }
+
+  .name-field {
+    margin-top: 20px;
+  }
+
+  .description-field {
+    margin-top: 30px;
+  }
+
+  .dropdown-text {
+    margin-top: 30px;
+  }
+
+  .dropdown {
+    margin-bottom: 20px;
+    // margin-top: 5px;
+  }
+
+  .isRecyclableRadio {
+    background-color: $cream;
+    padding: 20px;
+  }
+
+  .didYouRecycleRadio {
+    margin-bottom: 20px;
+  }
+
+  .didYouRecycleRadio {
+    background-color: $cream;
+    padding: 20px;
+  }
+
+  .btn {
+    margin-bottom: 30px;
+    background-color: $blue;
+    color: $cream;
+  }
+
+  .btn:hover {
+    color: $cream;
+    background-color: $lightGreen;
+    color: $shadow;
+
+  }
+
 }

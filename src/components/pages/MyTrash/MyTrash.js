@@ -1,5 +1,4 @@
 import React from 'react';
-
 import authData from '../../../helpers/data/authData';
 import trashData from '../../../helpers/data/trashData';
 
@@ -22,8 +21,7 @@ class MyTrash extends React.Component {
     const uid = authData.getUid();
     trashData.getTrashByUid(uid)
       .then((trashArray) => {
-        const Moment = require('moment');
-        trashArray.sort((oldest, newest) => new Moment(newest.dateAdded).format('MMDDYYYY') - new Moment(oldest.dateAdded).format('MMDDYYYY'));
+        trashArray.sort((oldest, newest) => newest.timestampForSorting - oldest.timestampForSorting);
         this.setState({ trashArray });
         const newArray = this.state.trashArray.map((item) => item.didYouRecycle);
         const amountOfRecycledItems = newArray.filter((a) => a === 'true');

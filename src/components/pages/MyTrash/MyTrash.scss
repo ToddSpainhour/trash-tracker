@@ -3,17 +3,22 @@
 .MyTrash {
   display: block;
   background-color: $cream;
-  // margin-bottom: 125px;
-  // margin-top: 50px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 25px;
+
   .my-trash-banner {
     background-color: $cream;
     padding: 25px 0px 25px;
+    border-radius: 25px;
   }
+
   .add-more-button {
     color: $cream;
     background-color: $blue;
-    margin-left: 10px;
+    margin-top: 25px;
   }
+
   .add-more-button:hover {
     color: $shadow;
     background-color: $lightGreen;

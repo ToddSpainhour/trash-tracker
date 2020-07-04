@@ -83,12 +83,12 @@ class CreateNewTrash extends React.Component {
     </option>);
 
     return (
-      <div className="CreateNewTrash col-12">
-        <h5>Create New Trash Page</h5>
+      <div className="CreateNewTrash col-sm-12 col-sm-offset-0 col-md-10 offset-md-1">
+        <h5 className="form-title">Log a New Trash Item Below</h5>
 
           <form>
 
-            <div className="form-group">
+            <div className="form-group name-field col-sm-12 col-sm-offset-0 col-md-8 offset-md-2">
               <label htmlFor="userCreatedItemName">Name</label>
                 <input
                 type="text"
@@ -100,7 +100,7 @@ class CreateNewTrash extends React.Component {
                 />
             </div>
 
-            <div className="form-group">
+            <div className="form-group description-field col-sm-12 col-sm-offset-0 col-md-8 offset-md-2">
               <label htmlFor="userCreatedItemDescription">Description</label>
               <input
               type="text"
@@ -113,7 +113,7 @@ class CreateNewTrash extends React.Component {
             </div>
 
             <div>
-              <p>What material is the made of?</p>
+              <p className="dropdown-text">What material is the item made of?</p>
                 <select
                   className="dropdown"
                   id="userSelectedMaterial"
@@ -186,7 +186,7 @@ class CreateNewTrash extends React.Component {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-dark btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button>
+            <button type="submit" className="btn btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button>
           </form>
       </div>
     );

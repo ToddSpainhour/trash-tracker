@@ -6,21 +6,24 @@
   img {
     max-height: 50px;
   }
+  
   .card-bkg {
     background-color: $cream;
   }
+  
   .card-bkg:hover {
     box-shadow: 5px 5px 10px $shadow;
     transition: 0.2s ease-in-out;
   }
+
   .card {
     height: 90%
   }
+
   .btn {
     background-color: $lightGreen;
     margin-left: 10px;
   }
-
 
   .btn:hover {
     color: $cream;

@@ -98,10 +98,10 @@ class EditTrash extends React.Component {
 
     return (
       <div className="EditTrash col-12">
-        <h5>Edit Trash Page</h5>
+        <h5 className="form-title">Edit Your Trash Item</h5>
         <form>
 
-            <div className="form-group">
+            <div className="form-group name-field col-sm-12 col-sm-offset-0 col-md-8 offset-md-2">
               <label htmlFor="userCreatedItemName">Name</label>
                 <input
                 type="text"
@@ -113,7 +113,7 @@ class EditTrash extends React.Component {
                 />
             </div>
 
-            <div className="form-group">
+            <div className="form-group description-field col-sm-12 col-sm-offset-0 col-md-8 offset-md-2">
               <label htmlFor="userCreatedItemDescription">Description</label>
               <input
               type="text"
@@ -126,7 +126,7 @@ class EditTrash extends React.Component {
             </div>
 
             <div>
-              <p>What material is the made of?</p>
+              <p className="dropdown-text">What material is item made of?</p>
                 <select
                   className="dropdown"
                   id="userSelectedMaterial"
@@ -206,7 +206,7 @@ class EditTrash extends React.Component {
             </div>
           </div>
 
-            <button type="submit" className="btn btn-dark btn-sm" onClick={this.updateTrash}>Update This Trash</button>
+            <button type="submit" className="btn btn-sm" onClick={this.updateTrash}>Update This Trash</button>
           </form>
 
       </div>

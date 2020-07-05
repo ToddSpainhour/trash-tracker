@@ -1,4 +1,10 @@
+@import '../../../styles/variables';
+
 .Challenge {
   display: block;
-  background-color: #bac964;
+  background-color: $lightGreen;
+  border-radius: 25px;
+  padding: 25px;
+
+  margin-top: 30vh;
 }

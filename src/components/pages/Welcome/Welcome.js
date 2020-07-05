@@ -9,7 +9,7 @@ import './Welcome.scss';
 class Welcome extends React.Component {
   render() {
     return (
-      <div className="Welcome">
+      <div className="Welcome col-12">
         <h5>Welcome component</h5>
         <Auth />
         <ChallengeTeaser />

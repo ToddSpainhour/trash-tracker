@@ -1,4 +1,11 @@
+@import '../../../styles/variables';
+
 .Welcome {
   display: block;
   background-color: #438a5e;
+  background-color: $cream;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 25px;
+  // height: 100vh;
 }

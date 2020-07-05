@@ -1,3 +1,25 @@
+@import '../../../styles/variables';
+
 .ChallengeTeaser {
-display: block;
+display: flex;
+flex-wrap: wrap;
+margin-top: 5%;
+margin-bottom: 5%;
+border-radius: 25px;
+
+  .challengeTeaserTextArea {
+    background-color: $darkGreen;
+    color: $shadow;
+    border-radius: 25px;
+    padding: 2rem;
+  }
+
+  .challegeTeaserImage {
+    align-self: center;
+  }
+
+}
+
+img {
+  height: 150px;
 }

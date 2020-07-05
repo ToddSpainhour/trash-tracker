@@ -1,3 +1,61 @@
+@import '../../../styles/variables';
+
 .LearnMoreTeaser {
-  display: block;
+display: flex;
+flex-wrap: wrap;
+margin-top: 5%;
+margin-bottom: 5%;
+border-radius: 25px;
+// background-color: $blue;
+
+  .learnMoreTeaserTextArea {
+    background-color: $blue;
+    border-radius: 25px;
+    // margin-bottom: 25px;
+    }
+  
+  .learn-more-teaser-header {
+    color: $cream;
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+  }
+
+  .line-divider {
+    border: 1px solid $cream;
+    // border-bottom-color: $cream;
+    // border-width: 1px;
+    // border-style: solid;
+    margin-bottom: 25px;
+  }
+
+
+  .learn-more-teaser-text-body {
+    display: inline-block;
+    color: $cream;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .learnMoreTeaserImage {
+    align-self: center;
+  }
+
+  .learn-more-teaser-button {
+    color: $shadow;
+    background-color: $lightGreen;
+    margin-bottom: 25px;
+  }
+
+  .learn-more-teaser-button:hover {
+    color: $shadow;
+    background-color: $cream;
+  }
+
+}
+
+.learn-more-teaser-img {
+  height: 150px;
+  margin-bottom: 25px;
+
 }

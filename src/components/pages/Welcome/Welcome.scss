@@ -2,10 +2,37 @@
 
 .Welcome {
   display: block;
-  background-color: #438a5e;
   background-color: $cream;
   margin-top: 5%;
   margin-bottom: 5%;
   border-radius: 25px;
-  // height: 100vh;
+
+  .header-area {
+    background-color: $darkGreen;
+    border-radius: 25px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding: 2rem;
+  }
+
+  .header-intro {
+    display: flex;
+    justify-content: flex-start;
+    color: $shadow;
+    margin-bottom: 0px;
+  }
+
+  .header {
+    background-color: $darkGreen;
+    color: $cream;
+    border-radius: 25px;
+    font-size: 4.5rem;
+    font-weight: bolder;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .tagline {
+    color: $lightGreen;
+  }
 }

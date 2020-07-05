@@ -1,4 +1,28 @@
+@import '../../../styles/variables';
+
 .Auth {
   display: block;
-  background-color: #bac964;
+  padding-top: 15px;
+
+  .auth-text-area {
+    background-color: $cream;
+    border-radius: 25px;
+    color: $shadow;
+  }
+
+  .login-button-intro-text {
+    color: $shadow;
+  }
+
+  .login-button {
+    color: $cream;
+    background-color: $blue;
+    margin-bottom: 25px;
+  }
+
+  .login-button:hover {
+    color: $shadow;
+    background-color: $lightGreen;
+    // background-color: $blue;
+  }
 }

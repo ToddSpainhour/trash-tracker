@@ -13,9 +13,12 @@ class Auth extends React.Component {
 
   render() {
     return (
-      <div className="Auth">
-        <h5>Auth Component</h5>
-        <button className="btn btn-dark" onClick={this.loginClickEvent}>Login with Your Google Account</button>
+      <div className="Auth col-md-4 offset-md-4 col-sm-12">
+        <div className="auth-text-area col-md-12 col-sm-12">
+          <h6 className="login-button-intro-text">Login to Get Started</h6>
+            <button className="btn login-button" onClick={this.loginClickEvent}>Login</button>
+              <div className="line-divider col-6 offset-3"></div>
+        </div>
       </div>
     );
   }

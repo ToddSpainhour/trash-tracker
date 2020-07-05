@@ -36,7 +36,7 @@ border-radius: 25px;
     margin-bottom: 25px;
   }
 
-  .challegeTeaserImage {
+  .challegeTeaserImageArea {
     align-self: center;
   }
 
@@ -47,12 +47,12 @@ border-radius: 25px;
   }
 
   .challenger-teaser-button:hover {
-    color: $cream;
-    background-color: $blue;
+    color: $shadow;
+    background-color: $cream;
   }
 
 }
 
-img {
+.challenge-teaser-image {
   height: 150px;
 }

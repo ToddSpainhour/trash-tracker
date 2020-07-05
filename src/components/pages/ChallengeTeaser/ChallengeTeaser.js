@@ -17,8 +17,8 @@ class ChallengeTeaser extends React.Component {
           <Link to="/7daychallenge" className="btn btn-sm challenger-teaser-button">Read More</Link>
           </div>
         </div>
-        <div className="challegeTeaserImage col-md-4 col-sm-12">
-          <img src={ imagePlaceholder } alt="change this text"/>
+        <div className="challegeTeaserImageArea col-md-4 col-sm-12">
+          <img src={ imagePlaceholder } className="challenge-teaser-image" alt="change this text"/>
         </div>
       </div>
     );

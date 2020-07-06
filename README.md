@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Trash Tracker
+See the site. <br>
+https://trash-tracker-90d5a.web.app/welcome
 
-## Available Scripts
+## Description
+This is my front-end capstone project to wrap up the first 6 months of my web developer training at Nashville Software School. 
 
-In the project directory, you can run:
+## Background
+I don’t know about you, but I feel guilty when I throw something away knowing it will be in a landfill for hundreds of years. I wanted to make a resource to highlight the seemingly insignificant act of throwing something away and how that decision could last for generations. The goal of Trash Tracker is twofold: make users more conscious of what they throw away and expose them to environmental facts to encourage eco-friendly decisions. Every little bit helps. 
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
+![Project Screenshot](./src/screenshots/trash-tracker-welcome.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Project Screenshot](./src/screenshots/my-trash-page.jpg)
 
-### `npm test`
+![Project Screenshot](./src/screenshots/create-page.jpg)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How it Works
+Once authenticated through their Google account, users can perform full CRUD on items they throw away or choose to recycle. When adding a new item, the user is asked not just for a name and description, but also the material type (dynamic dropdown), if the item they are entering is recyclable, and if they chose to recycle it or not. Once a new item is created, the user is pushed to a page where a random environmental fact that’s stored on firebase is displayed. When they return to the main page (which I refer to as My Trash) they can see the items they’ve added and relevant stats are displayed near the top of the screen.
 
-### `npm run build`
+## Technologies Used
+React, Firebase, Axios, React Router, JSX, HTML5, Javascript, Sass, Bootstrap, MomentJS, NPM were used in the creation of the Trash Tracker application.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## How to Run
+Clone down this repo.
+Make sure you have http-server installed via npm. If not, get it here.
+On your command line, run hs -p 3000.
+In your browser, navigate to http://localhost:3000.

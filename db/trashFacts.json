@@ -1,27 +1,63 @@
 {
   "fact1": {
-    "randomFact": "Styrofoam never biodegrades! It basically lasts forever!",
-    "factSource": "The Internet!",
+    "randomFact": "Styrofoam never biodegrades! It basically lasts forever! Styrofoam products fill up 25 to 30 percent of landfill space around the world.",
+    "factSource": "www.colliercountyfl.gov/",
     "materialId": "Styrofoam"
   },
   "fact2": {
-    "randomFact": "Greasy cardboard isn't recyclable.",
-    "factSource": "More Internet knowledge!",
+    "randomFact": "In the past 50 years, humans have consumed more resources than in all previous history.",
+    "factSource": "United States Environmental Protection Agency (EPA)",
     "materialId": "Cardboard"
   },
   "fact3": {
-    "randomFact": "Some plastics can't be recycled. Check local resources to see what you can toss in the recycle bin.",
-    "factSource": "More Internet knowledge!",
-    "materialId": "Plastic"
+    "randomFact": "Municipal solid waste generated in 2017 increased to 4.51 pounds per person per day.",
+    "factSource": "United States Environmental Protection Agency (EPA)",
+    "materialId": "Other"
   },
   "fact4": {
-    "randomFact": "Random fact!",
-    "factSource": "The Internet!",
-    "materialId": "Wood"
+    "randomFact": "Paper and paperboard products made up the largest percentage of all the materials in landfills, at 25 percent of total generation.",
+    "factSource": "United States Environmental Protection Agency (EPA)",
+    "materialId": "Paper"
   },
   "fact5": {
-    "randomFact": "Another interesting fact!",
-    "factSource": "More Internet knowledge!",
-    "materialId": "Rubber"
+    "randomFact": "Once landfills are full, sometimes they build on top of them. Things like golf courses!",
+    "factSource": "Wikipedia",
+    "materialId": "Other"
+  },
+  "fact6": {
+    "randomFact": "Some states send their trash to other states.",
+    "factSource": "www.livegreen.recyclebank.com",
+    "materialId": "Other"
+  },
+  "fact7": {
+    "randomFact": "Recycling aluminum takes 95% less energy than making aluminum from raw materials.",
+    "factSource": "www.wm.com",
+    "materialId": "Metal"
+  },
+  "fact8": {
+    "randomFact": "The United States throws away enough glass bottles and jars to fill a 1,350 square foot building every week.",
+    "factSource": "www.wm.com",
+    "materialId": "Glass"
+  },
+  "fact9": {
+    "randomFact": "Enough plastic bottles are thrown away each year to circle the earth four times.",
+    "factSource": "www.wm.com",
+    "materialId": "Plastic"
+  },
+  "fact10": {
+    "randomFact": "In a lifetime the average American will throw away 600 times the amount of his or her adult weight in garbage.",
+    "factSource": "www.wm.com",
+    "materialId": "Plastic"
+  },
+  "fact11": {
+    "randomFact": "Middle Point Landfill, where Nashville sends its trash, accepts an average of 3,700 tons of waste a day.",
+    "factSource": "www.middlepointlandfill.com",
+    "materialId": "Other"
+  },
+  "fact12": {
+    "randomFact": "With less than 5% of the world’s population, the U.S. was responsible for about one third of the world’s total material consumption in 1970-1995.",
+    "factSource": "United States Environmental Protection Agency (EPA)",
+    "materialId": "Other"
   }
 }
+

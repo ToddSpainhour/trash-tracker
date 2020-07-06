@@ -10,11 +10,11 @@ I don’t know about you, but I feel guilty when I throw something away knowing 
 
 
 ## Screenshots
-![Project Screenshot](./src/screenshots/trash-tracker-welcome.png)
+![Project Screenshot](https://raw.githubusercontent.com/ToddSpainhour/trash-tracker/master/src/screenshots/trash-tracker-welcome.png)
 
-![Project Screenshot](./src/screenshots/my-trash-page.jpg)
+![Project Screenshot](https://raw.githubusercontent.com/ToddSpainhour/trash-tracker/master/src/screenshots/my-trash-page.JPG)
 
-![Project Screenshot](./src/screenshots/create-page.jpg)
+![Project Screenshot](https://raw.githubusercontent.com/ToddSpainhour/trash-tracker/master/src/screenshots/create-page.JPG)
 
 ## How it Works
 Once authenticated through their Google account, users can perform full CRUD on items they throw away or choose to recycle. When adding a new item, the user is asked not just for a name and description, but also the material type (dynamic dropdown), if the item they are entering is recyclable, and if they chose to recycle it or not. Once a new item is created, the user is pushed to a page where a random environmental fact that’s stored on firebase is displayed. When they return to the main page (which I refer to as My Trash) they can see the items they’ve added and relevant stats are displayed near the top of the screen.

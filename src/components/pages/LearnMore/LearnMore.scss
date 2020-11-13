@@ -2,8 +2,32 @@
 
 .LearnMore {
   display: block;
-  background-color: $lightGreen;
+  background-color: $cream;
   border-radius: 25px;
   padding: 25px;
-  margin-top: 30vh;
+  margin: 5vh 0px 5vh 0px;
+ 
+  img {
+    width: 25%;
+  }
+
+  .page-header {
+    color: $blue;
+    font-weight: bolder;
+    padding: 3%;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: $lightGreen;
+  }
+
+  .section-title {
+    color: $blue;
+    padding: 0px 0px 25px 0px;
+    font-weight: bold;
+  }
+
+  p {
+    padding: 5% 50px 5% 50px;
+
+  }
 }

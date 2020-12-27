@@ -3,8 +3,13 @@
 .MyNavbar {
   display: block;
   background-color: $cream;
+
   .banner-logo {
     height: 3rem;
     margin-right: .5rem;
+  }
+
+  .logout-btn:hover {
+    cursor: pointer;
   }
 }

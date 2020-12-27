@@ -49,9 +49,8 @@ class MyTrash extends React.Component {
     let buildTrashCards;
 
     if (trashArray.length === 0) {
-      buildTrashCards = <div className="empty-trash-array">
-          <h3>Add your first item!</h3>
-          <img src={ TrashCanGraphic } alt="trash can graphic"/>
+      buildTrashCards = <div className="empty-trash-array col-12">
+          <img src={ TrashCanGraphic } className="trash-can-graphic col-6"alt="trash can graphic"/>
         </div>;
     } else {
       buildTrashCards = trashArray.map((trashItem) => (
@@ -59,14 +58,21 @@ class MyTrash extends React.Component {
       ));
     }
 
+    let addMoreTrashButton;
+    if (trashArray.length === 0) {
+      addMoreTrashButton = <button className="btn add-more-button" onClick={this.openCreateNewTrashForm}>Add Your First Item</button>;
+    } else {
+      addMoreTrashButton = <button className="btn add-more-button" onClick={this.openCreateNewTrashForm}>Add More Trash</button>;
+    }
+
     return (
       <div className="MyTrash col-12">
         <div className=" my-trash-banner">
           <h2 className="my-trash-header">My Trash</h2>
-              <div className="my-trash-stats">
-                <h5> You've recycled {numberOfRecycledItems} out of {totalNumberOfItems} items.</h5>
-              </div>
-            <button className="btn add-more-button" onClick={this.openCreateNewTrashForm}>Add More Trash</button>
+            <div className="my-trash-stats">
+              <h5> You've recycled {numberOfRecycledItems} out of {totalNumberOfItems} items.</h5>
+            </div>
+            {addMoreTrashButton}
         </div>
         <div className="row">
           {buildTrashCards}

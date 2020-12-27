@@ -7,6 +7,10 @@
   margin-bottom: 5%;
   border-radius: 25px;
 
+  h3 {
+    color: $shadow;
+  }
+
   .my-trash-banner {
     background-color: $cream;
     padding: 25px 0px 25px;
@@ -22,6 +26,10 @@
   .add-more-button:hover {
     color: $shadow;
     background-color: $lightGreen;
+  }
+
+  .trash-can-graphic {
+    padding-top: 25px;
   }
 }
 

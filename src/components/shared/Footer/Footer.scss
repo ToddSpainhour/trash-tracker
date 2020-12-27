@@ -8,8 +8,17 @@
   width: 100%;
   background-color: $shadow;
   padding-top: 10px;
+  
   p {
     color: $lightGreen;
     margin: 5px;
+  }
+
+  a {
+    color: $lightGreen
+  }
+
+  a:hover {
+    color: $blue;
   }
 }

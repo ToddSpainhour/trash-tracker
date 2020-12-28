@@ -6,14 +6,14 @@ import authData from '../../../helpers/data/authData';
 
 class EditTrash extends React.Component {
   state = {
+    materialId: [],
     trashName: '',
     trashDescription: '',
-    materialId: [],
     selectedMaterial: '',
+    dateAdded: '',
     isRecyclable: false,
     didYouRecycle: false,
     timestampForSorting: 0,
-    dateAdded: '',
   };
 
   componentDidMount() {
@@ -100,6 +100,17 @@ class EditTrash extends React.Component {
       {material.name}
     </option>);
 
+    let submitButton;
+    if (this.state.trashName.length === 0
+      || this.state.trashDescription.length === 0
+      || this.state.selectedMaterial.length === 0
+      || this.state.isRecyclable.length === 0
+      || this.state.didYouRecycle.length === 0) {
+      submitButton = <button disabled type="submit" className="btn btn-sm">Complete the Form</button>;
+    } else {
+      submitButton = <button type="submit" className="btn btn-sm" onClick={this.updateTrash}>Update This Trash</button>;
+    }
+
     return (
       <div className="EditTrash col-12">
         <h5 className="form-title">Edit Your Trash Item</h5>
@@ -108,24 +119,24 @@ class EditTrash extends React.Component {
             <div className="form-group name-field col-sm-12 col-sm-offset-0 col-md-8 offset-md-2">
               <label htmlFor="userCreatedItemName">Name</label>
                 <input
-                type="text"
-                className="form-control"
-                id="userCreatedItemName"
-                value={trashName}
-                onChange={this.nameChange}
-                placeholder="Milk Carton"
+                  type="text"
+                  className="form-control"
+                  id="userCreatedItemName"
+                  value={trashName}
+                  onChange={this.nameChange}
+                  placeholder="Milk Carton"
                 />
             </div>
 
             <div className="form-group description-field col-sm-12 col-sm-offset-0 col-md-8 offset-md-2">
               <label htmlFor="userCreatedItemDescription">Description</label>
               <input
-              type="text"
-              className="form-control"
-              id="userCreatedItemDescription"
-              value={trashDescription}
-              onChange={this.descriptionChange}
-              placeholder="One Gallon"
+                type="text"
+                className="form-control"
+                id="userCreatedItemDescription"
+                value={trashDescription}
+                onChange={this.descriptionChange}
+                placeholder="One Gallon"
               />
             </div>
 
@@ -148,13 +159,13 @@ class EditTrash extends React.Component {
 
               <div className="form-check">
                 <input required
-                className="form-check-input"
-                type="radio"
-                name="recyclable"
-                id="notRecyclable"
-                value={true}
-                onChange={this.recyclabaleChange}
-                checked={this.state.isRecyclable === 'true' ? 'checked' : '' }
+                  className="form-check-input"
+                  type="radio"
+                  name="recyclable"
+                  id="notRecyclable"
+                  value={true}
+                  onChange={this.recyclabaleChange}
+                  checked={this.state.isRecyclable === 'true' ? 'checked' : '' }
                 />
                 <label className="form-check-label" htmlFor="notRecyclable">
                   Yes, it is recyclable.
@@ -163,13 +174,13 @@ class EditTrash extends React.Component {
 
               <div className="form-check">
                 <input
-                className="form-check-input"
-                type="radio"
-                name="recyclable"
-                id="isRecyclable"
-                value={false}
-                onChange={this.recyclabaleChange}
-                checked={this.state.isRecyclable === 'false' ? 'checked' : '' }
+                  className="form-check-input"
+                  type="radio"
+                  name="recyclable"
+                  id="isRecyclable"
+                  value={false}
+                  onChange={this.recyclabaleChange}
+                  checked={this.state.isRecyclable === 'false' ? 'checked' : '' }
                 />
                 <label className="form-check-label" htmlFor="isRecyclable">
                   No. This item is not recyclable.
@@ -182,12 +193,12 @@ class EditTrash extends React.Component {
 
             <div className="form-check">
               <input
-              className="form-check-input"
-              type="radio" name="iDidRecycle"
-              id="didRecycle"
-              value={true}
-              onChange={this.didYouRecycleChange}
-              checked={this.state.didYouRecycle === 'true' ? 'checked' : '' }
+                className="form-check-input"
+                type="radio" name="iDidRecycle"
+                id="didRecycle"
+                value={true}
+                onChange={this.didYouRecycleChange}
+                checked={this.state.didYouRecycle === 'true' ? 'checked' : '' }
               />
               <label className="form-check-label" htmlFor="didRecycle">
                 Yes, I chose to recycle this item.
@@ -196,22 +207,20 @@ class EditTrash extends React.Component {
 
             <div className="form-check">
               <input className="form-check-input"
-              type="radio"
-              name="iDidRecycle"
-              id="didNotRecycle"
-              value={false}
-              onChange={this.didYouRecycleChange}
-              checked={this.state.didYouRecycle === 'false' ? 'checked' : '' }
+                type="radio"
+                name="iDidRecycle"
+                id="didNotRecycle"
+                value={false}
+                onChange={this.didYouRecycleChange}
+                checked={this.state.didYouRecycle === 'false' ? 'checked' : '' }
               />
               <label className="form-check-label" htmlFor="didNotRecycle">
                 No. I didn't recycle this item.
               </label>
-
             </div>
           </div>
-
-            <button type="submit" className="btn btn-sm" onClick={this.updateTrash}>Update This Trash</button>
-          </form>
+          {submitButton}
+        </form>
 
       </div>
     );

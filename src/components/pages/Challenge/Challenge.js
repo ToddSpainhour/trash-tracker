@@ -17,16 +17,14 @@ class Challenge extends React.Component {
           <div>
             <h3 className="section-title">Track Your Trash for Seven Days</h3>
             <p>How much trash do you produce in a week? With Trash Tracker it's easy to find out. All you need to do is log in with your Google account,
-              and start adding items that are easy to forget.
-              Trash Tracker really shines when you look back at the items you previously added by putting
-              perspective just how must we throw away. If all that trash just comes from me in a week, how much do I produce in a year?
+              and start adding these items that are easy to forget.
+              Trash Tracker has a way of putting things into perspective. If all that trash comes from me in a week, how much do I produce in a year?
               What about everyone in the city? The state? The country?</p>
             <img src= { trashTrackerCards } className="trash-tracker-cards-img" alt="tracked trash cards"></img>
           </div>
 
           <div>
             <h3 className="section-title">Take the Seven Day Trash Tracker Challenge</h3>
-            <p>Are you ready for the challenge? Get started by logging in below!</p>
             <Auth />
             <img src= { recycleGraphic } alt="recycle logo"></img>
           </div>

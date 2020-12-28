@@ -11,9 +11,6 @@ class Challenge extends React.Component {
     return (
       <div className="Challenge col-12">
           <h1 className="page-header">Up For A Challenge?</h1>
-          {/* <p>Don't worry! This challenge is easy. All you need to do is track what you throw away or recycle for seven days.
-            This is a great peek into just how must we throw in the trash can.
-          </p> */}
           <div>
             <h3 className="section-title">Track Your Trash for Seven Days</h3>
             <p>How much trash do you produce in a week? With Trash Tracker it's easy to find out. All you need to do is log in with your Google account,

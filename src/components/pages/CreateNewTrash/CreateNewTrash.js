@@ -8,12 +8,12 @@ import './CreateNewTrash.scss';
 
 class CreateNewTrash extends React.Component {
   state = {
+    materialId: [],
     trashName: '',
     trashDescription: '',
-    materialId: [],
     selectedMaterial: '',
-    isRecyclable: true,
-    didYouRecycle: false,
+    isRecyclable: '',
+    didYouRecycle: '',
   }
 
   componentDidMount() {
@@ -62,7 +62,7 @@ class CreateNewTrash extends React.Component {
       isRecyclable,
       didYouRecycle,
       timestampForSorting: Date.now(),
-      dateAdded: moment().format('L'), // this is to be displayed on the card
+      dateAdded: moment().format('L'), // date to be displayed on the card
       uid: authData.getUid(),
     };
     trashData.postNewTrash(newTrashItem)
@@ -82,13 +82,12 @@ class CreateNewTrash extends React.Component {
       {material.name}
     </option>);
 
-    console.log('this.state.isRecyclable.checked === false:', this.state.isRecyclable.checked === false);
-
     let submitButton;
     if (this.state.trashName.length === 0
         || this.state.trashDescription.length === 0
         || this.state.selectedMaterial.length === 0
-        // || this.state.isRecyclable.checked
+        || this.state.isRecyclable.length === 0
+        || this.state.didYouRecycle.length === 0
     ) {
       submitButton = <button disabled type="submit" className="btn btn-sm">Fill in more info above</button>;
     } else {
@@ -195,12 +194,8 @@ class CreateNewTrash extends React.Component {
                   <label className="form-check-label" htmlFor="didNotRecycle">
                   No. I didn't recycle this item.
                 </label>
-
               </div>
             </div>
-
-            {/* <button type="submit" disabled={this.state.trashName.length === 0} className="btn btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button> */}
-            {/* <button type="submit" className="btn btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button> */}
             {submitButton}
           </form>
       </div>

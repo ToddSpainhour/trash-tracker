@@ -2,9 +2,37 @@
 
 .Challenge {
   display: block;
-  background-color: $lightGreen;
+  background-color: $cream;
   border-radius: 25px;
   padding: 25px;
+  margin: 5vh 0px 5vh 0px;
+ 
+  img {
+    width: 25%;
+    padding: 3%;
+  }
 
-  margin-top: 30vh;
+  .trash-tracker-cards-img {
+    width: 75%;
+  }
+
+  .page-header {
+    color: $blue;
+    font-weight: bolder;
+    padding: 3%;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: $lightGreen;
+  }
+
+  .section-title {
+    color: $blue;
+    padding: 5% 0px 25px 0px;
+    font-weight: bold;
+  }
+
+  p {
+    padding: 1% 50px 2% 50px;
+
+  }
 }

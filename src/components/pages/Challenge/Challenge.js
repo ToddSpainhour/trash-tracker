@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Auth from '../Auth/Auth';
+
 import recycleGraphic from '../../../images/recycle-logo.svg';
 import trashTrackerCards from '../../../images/trash-tracker-cards.JPG';
 import './Challenge.scss';
@@ -24,8 +26,9 @@ class Challenge extends React.Component {
 
           <div>
             <h3 className="section-title">Take the Seven Day Trash Tracker Challenge</h3>
+            <p>Are you ready for the challenge? Get started by logging in below!</p>
+            <Auth />
             <img src= { recycleGraphic } alt="recycle logo"></img>
-            <p>Are you ready for the chellenge? Get started by logging in below!</p>
           </div>
 
       </div>

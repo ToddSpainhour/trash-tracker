@@ -82,6 +82,19 @@ class CreateNewTrash extends React.Component {
       {material.name}
     </option>);
 
+    console.log('this.state.isRecyclable.checked === false:', this.state.isRecyclable.checked === false);
+
+    let submitButton;
+    if (this.state.trashName.length === 0
+        || this.state.trashDescription.length === 0
+        || this.state.selectedMaterial.length === 0
+        // || this.state.isRecyclable.checked
+    ) {
+      submitButton = <button disabled type="submit" className="btn btn-sm">Fill in more info above</button>;
+    } else {
+      submitButton = <button type="submit" className="btn btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button>;
+    }
+
     return (
       <div className="CreateNewTrash col-sm-12 col-sm-offset-0 col-md-10 offset-md-1">
         <h5 className="form-title">Log a New Trash Item Below</h5>
@@ -186,7 +199,9 @@ class CreateNewTrash extends React.Component {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button>
+            {/* <button type="submit" disabled={this.state.trashName.length === 0} className="btn btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button> */}
+            {/* <button type="submit" className="btn btn-sm" onClick={this.saveNewTrash}>Submit More Trash</button> */}
+            {submitButton}
           </form>
       </div>
     );

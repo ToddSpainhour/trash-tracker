@@ -1,5 +1,6 @@
 import React from 'react';
-import recycleGraphic from '../../../images/recycle-logo.svg';
+
+import Auth from '../Auth/Auth';
 
 import './LearnMore.scss';
 
@@ -7,44 +8,34 @@ class LearnMore extends React.Component {
   render() {
     return (
       <div className="LearnMore col-12">
-          <h1 className="page-header">Donec magna lacus</h1>
-          <p>Aliquam semper diam vel gravida porttitor. In nisi mi, elementum sit amet dui ac, cursus rhoncus lectus. Fusce id elit viverra, vulputate dui ut, faucibus magna.
-            In ex leo, dictum vitae posuere sed, cursus vehicula nisl. Nulla semper nisi quis est auctor tincidunt. Quisque nibh ligula, tempus eget gravida rhoncus, maximus nec felis.
-            Fusce eu magna semper, pharetra mauris sed, venenatis sapien. Proin at ex malesuada, pretium urna ac, viverra nisl. Vivamus nec efficitur enim, et semper felis.</p>
+          <h1 className="page-header">Learn More</h1>
           <div>
-            <h3 className="section-title">Quisque a laoreet</h3>
-            <img src= { recycleGraphic } alt="recycle logo"></img>
-            <p>Nulla quis ipsum tellus. In tempor viverra nulla, et aliquam nulla. Vestibulum blandit tellus vel lacus porttitor placerat. Donec varius enim arcu, non lobortis purus efficitur at.
-              Mauris rhoncus id enim non ullamcorper. Maecenas varius tincidunt purus, non gravida lorem. Curabitur varius ex vitae sodales elementum.</p>
+            <h3 className="section-title">Landfills</h3>
+            <p>From ancient humans discarding broken tools to you or me tossing out our sandwich wrapper, everyone has created trash
+               in their lives, but unlike our ancestors, the amount of trash we produce today vastly outweighs those that came before us.
+               The United States Environmental Protection Agency (EPA) says that in 2018, 292.4 million tons of solid waste was produced,
+               which comes out to 4.9 pounds per person. Do you even know where your trash goes when you throw it away?
+            </p>
           </div>
 
           <div>
-            <h3 className="section-title">Nulla accumsan</h3>
-            <img src= { recycleGraphic } alt="recycle logo"></img>
-            <p>Mauris pretium vestibulum laoreet. Suspendisse euismod in tellus at blandit. Duis iaculis ex nisl, a tristique dolor semper sit amet. Nullam eget blandit purus, et lacinia neque.
-              Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vulputate eros, nec sollicitudin lectus malesuada vel.</p>
+            <h3 className="section-title">Recycling</h3>
+            <p>Instead of sending everything to a landfill, some items can be recycled and turned into something new.
+               Like shoes, a toothbrush, and even carry-on luggage made from plastic bottles, or even a skateboard from discarded fishing nets.
+               Even though recycling is a vital part to addressing excess waste, it’s only one option available.
+               We can also reduce the trash we produce by buying less, or finding ways to reuse items that we already have.
+               Combining Reduce, Reuse, and Recycle in our daily routines can make a positive impact.
+            </p>
           </div>
 
           <div>
-            <h3 className="section-title">Phasellus aliquam nisl sed</h3>
-            <img src= { recycleGraphic } alt="recycle logo"></img>
-            <p>Mauris pretium vestibulum laoreet. Suspendisse euismod in tellus at blandit. Duis iaculis ex nisl, a tristique dolor semper sit amet. Nullam eget blandit purus, et lacinia neque.
-              Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vulputate eros, nec sollicitudin lectus malesuada vel.</p>
+            <h3 className="section-title">What can I do to help?</h3>
+             <p>Simply thinking about how much you throw out and what items you can recycle is a step in the right direction.
+                Learn more about the choices you make, then take an active role in the future by making small decisions daily.
+              </p>
           </div>
 
-          <div>
-            <h3 className="section-title">Et hendrerit libero ante</h3>
-            <img src= { recycleGraphic } alt="recycle logo"></img>
-            <p>Mauris pretium vestibulum laoreet. Suspendisse euismod in tellus at blandit. Duis iaculis ex nisl, a tristique dolor semper sit amet. Nullam eget blandit purus, et lacinia neque.
-              Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vulputate eros, nec sollicitudin lectus malesuada vel.</p>
-          </div>
-
-          <div>
-            <h3 className="section-title">Nam in imperdiet augue</h3>
-            <img src= { recycleGraphic } alt="recycle logo"></img>
-            <p>Mauris pretium vestibulum laoreet. Suspendisse euismod in tellus at blandit. Duis iaculis ex nisl, a tristique dolor semper sit amet. Nullam eget blandit purus, et lacinia neque.
-              Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vulputate eros, nec sollicitudin lectus malesuada vel.</p>
-          </div>
+          <Auth />
       </div>
     );
   }
